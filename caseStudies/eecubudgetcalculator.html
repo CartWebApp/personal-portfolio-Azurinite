@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <nav>
+                <a href="">Works</a>
+                <a href="">About Me</a>
+                <a href="">Resume</a>
+                <a href="">Get In Touch</a>
+            </nav>
+        </nav>
+        <h1>EECU Budget Calculator</h1>
+    </header>
+
+    <main>
+        <p>Clients requested a financial literacy web application which would help young adults transitioning to the
+            workspace plan how to spend their budget.</p>
+        <p>Users would receive an approximation of the income they make, then fill out expenses per category to find out
+            whether they have a “surplus” or “shortfall” of money.</p>
+
+        <aside>
+            <h3>Project Role:</h3>
+            <p>Project Lead</p>
+
+            <h3>Full Team:</h3>
+            <ul>
+                <li>Ryan Gip</li>
+                <li>Mateo Siechert</li>
+                <li>David Koslov</li>
+                <li>Ta'rique Dixon</li>
+                <li>Naylia Vang</li>
+                <li>Jake Faridoni</li>
+                <li>Bruno Hidalgo</li>
+                <li>Ethan Pua</li>
+            </ul>
+
+            <h3>Netlify:</h3>
+            <a href="">wiseupbudgetcalculator.netlify.app</a>
+
+            <h3>GitHub:</h3>
+            <a href="">https://github.com/Azurinite/EECU-Budget-Calculator</a>
+        </aside>
+
+        <figure class="caseStudyImages">
+            <img src="" alt="">
+            <figcaption>Images of the project in action</figcaption>
+        </figure>
+
+        <section class="techStack">
+            <h2>The Tech Stack</h2>
+            <ul>
+                <li>
+                    <h3>Languages</h3>
+                    <figure>
+
+                    </figure>
+                </li>
+
+                <li>
+                    <h3>Tools</h3>
+                    <figure>
+
+                    </figure>
+                </li>
+
+                <li>
+                    <h3>Deployment</h3>
+                    <figure>
+
+                    </figure>
+                </li>
+            </ul>
+        </section>
+
+        <section class="conceptsLearned">
+            <h2>Concept Learned</h2>
+            <ul>
+                <li>
+                    <img src="" alt="">
+                    <div class="CLTextContent">
+                        <h3>Chart.js</h3>
+                        <p>Utilized chart.js to generate a live updating donut chart of the user’s expenses per category
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <img src="" alt="">
+                    <div class="CLTextContent">
+                        <h3>Fetch API</h3>
+                        <p>Applied the Fetch API to import data from a list of careers and salaries, letting the user
+                            pick an option from a dropdown to receive an approximation of their average monthly salary
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <img src="" alt="">
+                    <div class="CLTextContent">
+                        <h3>localStorage</h3>
+                        <p>Saved user input data with localStorage, removing the need for users to re-input expenses the
+                            next time they entered the website</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="problemsAndSolutions">
+            <h2>Problems & Solutions</h2>
+            <ul>
+                <li>
+                    <h3>1. Communication Between Developers</h3>
+                    <ul>
+                        <p><strong>The Problem:</strong>Needing to make sense of previous work other developers did
+                            detracted from my next developer’s work time.</p>
+                        <p><strong>The Solution:</strong> I began encouraging developers to comment their code to
+                            maintain organization in the CSS file and explain the functionality of JavaScript methods to
+                            less knowledgeable developers. This cut down the average time spent reading through code
+                            from 20 minutes to 10.</p>
+                    </ul>
+                </li>
+                <li>
+                    <h3>2. Fetch API not properly loading the dropdown</h3>
+                    <ul>
+                        <p><strong>The Problem:</strong> While careers and salaries seemed to be successfully fetched
+                            from the Fetch API (appearing in the DOM), any code attempting to read over the
+                            &lt;select&gt; dropdown did not seem to be able to access any &lt;option&gt; elements nor
+                            their values.</p>
+                        <p><strong>The Solution:</strong> After searching online, a thread on StackOverflow helped me
+                            realize that the dropdown must finish loading before proceeding with the rest of the code’s
+                            initialization and iteration of the DOM.</p>
+                    </ul>
+                </li>
+                <li>
+                    <h3>3. Improper Progressive Tax Calculations</h3>
+                    <ul>
+                        <p><strong>The Problem:</strong>The Progressive Tax function seemed to not be deducting
+                            enough—In fact, a console.log() showed the third bracket was adding money.</p>
+                        <p><strong>The Solution:</strong> The previous code was unnecessarily long, attempting to
+                            separately calculate each bracket at once in large sections of code. After researching the
+                            Progressive Tax function more thoroughly online and reading through others’ solutions, I
+                            found out it would be easier to simply use if statements to collect tax amounts depending on
+                            if the user’s salary was above or below bracket thresholds.</p>
+                    </ul>
+                </li>
+                <li>
+                    <h3>4. Scrolling Redundancies</h3>
+                    <ul>
+                        <p><strong>The Problem:</strong>The user would have to constantly scroll their screen between
+                            the next/back buttons and the input fields.</p>
+                        <p><strong>The Solution:</strong> Decreased the height of elements to allow the next/back bars
+                            and input fields to fit as compactly as they could in the viewport. Added an event listener
+                            for page transition to automatically scroll the page to put the next/back buttons in view,
+                            allowing the user to easily click through several pages without having to scroll.</p>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="habitsOfMind">
+            <h2>Habits of Mind in Action</h2>
+            <ul>
+                <li>
+                    <h3>Collaboration</h3>
+                    <p>I collaborated with more than 8 developers to construct semantic HTML structure, CSS styling, and
+                        JavaScript for field navigation before working on the project on my own.</p>
+                </li>
+                <li>
+                    <h3>Initiation</h3>
+                    <p>I took initiative with all my developers by laying out the precise code or functions I needed
+                        next. If my developers felt too under-experienced to take on the task, I would either have them
+                        focus on another task suited to their skills or mentor them through the process.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>
