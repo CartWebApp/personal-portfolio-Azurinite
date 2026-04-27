@@ -1,9 +1,29 @@
+:root {
+    --primary-red: #EB4747;
+    --primary-white: #EAEAEA;
+    --bg-black: #161616;
+}
+
+body {
+    background-color: var(--bg-black);
+}
+
+/* Home Page */
+.homePage #greeting #BigRedName {
+    color: var(--primary-red);
+}
 
 
+/* About Me page */
 
 #hobbies {
     background-color: black;
     & p, & h3 {
         color: white;
     }
+}
+
+.aboutMe #index {
+    background-color: black;
+    color: white
 }
