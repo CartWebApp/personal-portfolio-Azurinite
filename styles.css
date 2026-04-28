@@ -1,29 +1,231 @@
+@import url('https://googleapis.com');
+
 :root {
     --primary-red: #EB4747;
     --primary-white: #EAEAEA;
     --bg-black: #161616;
+    --second-black: #272727;
+    --border-radius: 15px;
 }
 
 body {
     background-color: var(--bg-black);
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
 }
 
+h1,
+h2,
+h3 {
+    font-weight: 300;
+}
+
+p {
+    font-size: 50px;
+    font-weight: 200;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* Universal nav bar */
+header {
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px
+}
+
+nav a {
+    color: var(--primary-white);
+    text-decoration: none;
+    font-size: 25px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+
 /* Home Page */
+.homePage main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 200px
+}
+
+.homePage #greeting h1 {
+    font-size: 125px;
+    margin-bottom: 0px;
+}
+
 .homePage #greeting #BigRedName {
     color: var(--primary-red);
+    font-size: 225px;
+}
+
+.homePage h2 {
+    text-align: center;
+    font-size: 80px;
+}
+
+.homePage ul li {
+    display: flex;
+
+    & img {
+        max-width: 550px;
+        max-height: 300px;
+
+        border-radius: var(--border-radius);
+        padding: 20px;
+        background-color: var(--second-black);
+    }
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        & * {
+            margin: 5px;
+        }
+
+        &>p {
+            font-size: 40px;
+        }
+
+        &>h3 {
+            font-size: 50px;
+        }
+
+        &>time {
+            font-size: 30px;
+            opacity: 0.7;
+        }
+
+        &>a {
+            padding: 20px;
+            font-size: 30px;
+            font-weight: 400;
+            background-color: var(--second-black);
+            border-radius: var(--border-radius);
+            border: 3px solid var(--primary-red);
+
+            &:hover {
+                background-color: #494949;
+            }
+        }
+    }
+}
+
+.homePage footer {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    
+    & * {
+        margin: 0px;
+    }
+}
+
+.homePage footer h2 {
+    text-align: center;
+    font-size: 125px;
+}
+
+.homePage footer p {
+    text-align: center;
+    font-size: 70px;
+}
+
+.homePage footer a {
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 400;
+    background-color: var(--second-black);
+    border-radius: var(--border-radius);
+    border: 3px solid var(--primary-red);
+
+    &:hover {
+        background-color: #494949;
+    }
 }
 
 
 /* About Me page */
 
-#hobbies {
-    background-color: black;
-    & p, & h3 {
-        color: white;
+.aboutMe h1, .aboutMe h2 {
+    font-size: 125px;
+}
+
+.aboutMe p {
+    font-size: 20px;
+}
+
+.aboutMe #yearInReview h2,
+.aboutMe #row4 h2 {
+    text-align: right;
+}
+
+.aboutMe #aboutMeAndIndex {
+    display: grid;
+    grid-template: auto / 0.6fr 0.35fr;
+    gap: 10%;
+}
+
+.aboutMe #aboutMeAndIndex article {
+    font-size: 20px;
+}
+
+.aboutMe #aboutMeAndIndex #index {
+    color: white;
+
+    & h2 {
+        font-size: 40px;
+    }
+
+    & ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    & li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 30px;
+
+        & p {
+            font-size: 20px;
+            margin: 0px;
+        }
+
+        & img {
+            border-radius: 15px;
+            background-color: var(--second-black);
+        }
     }
 }
 
-.aboutMe #index {
+#hobbies {
     background-color: black;
-    color: white
+
+    & p,
+    & h3 {
+        color: white;
+    }
 }

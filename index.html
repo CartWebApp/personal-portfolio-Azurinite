@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryan Gip's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="homePage">
     <header>
         <nav>
@@ -18,7 +20,8 @@
 
     <main>
         <section id="greeting">
-            <h1>The exposition of <span id="BigRedName">Ryan Gip's Career</span></h1>
+            <h1>The exposition of</h1>
+            <p><span id="BigRedName">Ryan Gip's Career</span></p>
             <p>Read about the story of my career as a designer—and maybe consider helping me continue the series.</p>
         </section>
 
@@ -30,7 +33,8 @@
                         <p>Case Study 01</p>
                         <h3>Bio Shield</h3>
                         <time datetime="2025-09-22">September 22nd, 2025</time>
-                        <a href="caseStudies/bioshield.html">View Case Study</a> <!--Maybe not an <a>! We could have an animation from home page to case study-->
+                        <a href="caseStudies/bioshield.html">View Case Study</a>
+                        <!--Maybe not an <a>! We could have an animation from home page to case study-->
                     </div>
                     <img src="Images/BioShield/image1.png" alt="Bio Shield home page">
                 </li>
@@ -59,16 +63,21 @@
             <h2>Writing Case Studies</h2>
             <ul>
                 <li id="researchPaper">
-                    <p>Case Study 04</p>
-                    <h3>Research Paper</h3>
-                    <time datetime="2025-09-22">September 22nd, 2025</time>
-                    <a href="caseStudies/researchpaper.html">View Case Study</a>
+                    <div class="caseStudyContent">
+                        <p>Case Study 04</p>
+                        <h3>Research Paper</h3>
+                        <time datetime="2025-09-22">September 22nd, 2025</time>
+                        <a href="caseStudies/researchpaper.html">View Case Study</a>
+                    </div>
                 </li>
                 <li id="CARTShowcaseReflection">
-                    <p>Case Study 05</p>
-                    <h3>CART Showcase Reflection</h3>
-                    <time datetime="2025-09-22">September 22nd, 2025</time>
-                    <a href="caseStudies/cartshowcase.html">View Case Study</a>
+                    <div class="caseStudyContent">
+                        <p>Case Study 05</p>
+                        <h3>CART Showcase Reflection</h3>
+                        <time datetime="2025-09-22">September 22nd, 2025</time>
+                        <a href="caseStudies/cartshowcase.html">View Case Study</a>
+                    </div>
+
                 </li>
             </ul>
         </section>
@@ -78,7 +87,8 @@
         <h2>Thank you for visiting!</h2>
         <p>Have a design idea?</p>
 
-        <button id="contactButton">Contact Me</button>
+        <a id="contactButton" href="contact.html">Contact Me</a>
     </footer>
 </body>
+
 </html>
