@@ -1,4 +1,4 @@
-@import url('https://googleapis.com');
+@import url('https://googleapis.com'); /* Import fonts */
 
 :root {
     --primary-red: #EB4747;
@@ -12,6 +12,8 @@ body {
     background-color: var(--bg-black);
     color: white;
     font-family: 'Ubuntu', sans-serif;
+
+    margin: 25px;
 }
 
 h1,
@@ -168,11 +170,11 @@ nav a {
 /* About Me page */
 
 .aboutMe h1, .aboutMe h2 {
-    font-size: 125px;
+    font-size: 7rem;
 }
 
 .aboutMe p {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .aboutMe #yearInReview h2,
@@ -182,19 +184,19 @@ nav a {
 
 .aboutMe #aboutMeAndIndex {
     display: grid;
-    grid-template: auto / 0.6fr 0.35fr;
-    gap: 10%;
+    grid-template: auto / 0.7fr 0.35fr;
+    gap: 80px;
 }
 
 .aboutMe #aboutMeAndIndex article {
-    font-size: 20px;
+    font-size: 1rem;
 }
 
 .aboutMe #aboutMeAndIndex #index {
     color: white;
 
     & h2 {
-        font-size: 40px;
+        font-size: 2.5rem;
     }
 
     & ul {
@@ -207,25 +209,127 @@ nav a {
         display: flex;
         align-items: center;
         gap: 15px;
-        font-size: 30px;
 
         & p {
-            font-size: 20px;
+            font-size: 1.25rem;
             margin: 0px;
         }
 
         & img {
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             background-color: var(--second-black);
         }
     }
 }
 
-#hobbies {
-    background-color: black;
+.aboutMe #yearInReview .content {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    gap: 5%;
 
-    & p,
+    & img {
+        max-width: 100%;
+    }
+
+    & #yearInReviewText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px; /* Why do I need a gap here, but not for the about me text... */
+
+        & p {
+            margin: 0px;
+        }
+    }
+}
+
+.aboutMe #awardsAndAchievements .content {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    gap: 25px;
+
+    & .awardItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        padding: 20px;
+        background-color: var(--second-black);
+        border-radius: var(--border-radius);
+
+        & h3 {
+            font-weight: 500;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        & img {
+            width: 100%;
+        }
+
+        & .awardPictures {
+            display: grid;
+            grid-template: 1fr / 1fr 1fr;
+            gap: 5px;
+        }
+    }
+}
+
+.aboutMe #certification .content {
+    display: flex;
+    gap: 5%;
+
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--second-black);
+
+    & img {
+        aspect-ratio: 1/1;
+        width: 30%;
+        height: 30%;
+    }
+
     & h3 {
-        color: white;
+        font-size: 3rem;
+
+    }
+
+    & ul {
+        font-size: 2rem;
+    }
+}
+
+.aboutMe #hobbies .content {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    gap: 5%;
+
+    & li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        padding: 20px;
+        background-color: var(--second-black);
+        border-radius: 15px;
+
+        & h3 {
+            font-weight: 500;
+            font-size: 2rem;
+            text-align: center;
+            margin: 0px;
+        }
+
+        & img {
+            width: 60%;
+        }
+
+        & p {
+            font-size: 2rem;
+            margin: 0px;
+        }
     }
 }
