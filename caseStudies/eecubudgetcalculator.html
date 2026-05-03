@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
-<body>
+<body class='programmingStudy'>
     <header>
         <nav>
             <nav>
@@ -22,43 +22,62 @@
 
     <main>
         <h1>EECU Budget Calculator</h1>
-        <p>Clients requested a financial literacy web application which would help young adults transitioning to the
-            workspace plan how to spend their budget.</p>
-        <p>Users would receive an approximation of the income they make, then fill out expenses per category to find out
-            whether they have a “surplus” or “shortfall” of money.</p>
+        <div id="introLayout">
+            <div id="projectBrief">
+                <p>Clients requested a financial literacy web application which would help young adults transitioning to the
+                    workspace plan how to spend their budget.</p>
+    
+                <p>Users would receive an approximation of the income they make, then fill out expenses per category to
+                    find
+                    out
+                    whether they have a “surplus” or “shortfall” of money.
+                </p>
+            </div>
 
-        <aside>
-            <h2>Project Role:</h2>
-            <p>Project Lead</p>
-
-            <h2>Full Team:</h2>
             <ul>
-                <li>Ryan Gip</li>
-                <li>Mateo Siechert</li>
-                <li>David Koslov</li>
-                <li>Ta'rique Dixon</li>
-                <li>Naylia Vang</li>
-                <li>Jake Faridoni</li>
-                <li>Bruno Hidalgo</li>
-                <li>Ethan Pua</li>
+                <li>
+                    <h2>Project Role:</h2>
+                    <p>Project Lead</p>
+                </li>
+
+                <li>
+                    <h2>Full Team:</h2>
+                    <ul>
+                        <li>Ryan Gip</li>
+                        <li>Mateo Siechert</li>
+                        <li>David Koslov</li>
+                        <li>Ta'rique Dixon</li>
+                        <li>Naylia Vang</li>
+                        <li>Jake Faridoni</li>
+                        <li>Bruno Hidalgo</li>
+                        <li>Ethan Pua</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <h2>Netlify:</h2>
+                    <a href="wiseupbudgetcalculator.netlify.app">wiseupbudgetcalculator.netlify.app</a>
+                </li>
+
+                <li>
+                    <h2>GitHub:</h2>
+                    <a
+                        href="https://github.com/Azurinite/EECU-Budget-Calculator">https://github.com/Azurinite/EECU-Budget-Calculator</a>
+                </li>
+
             </ul>
+        </div>
 
-            <h2>Netlify:</h2>
-            <a href="wiseupbudgetcalculator.netlify.app">wiseupbudgetcalculator.netlify.app</a>
-
-            <h2>GitHub:</h2>
-            <a href="https://github.com/Azurinite/EECU-Budget-Calculator">https://github.com/Azurinite/EECU-Budget-Calculator</a>
-        </aside>
-
-        <figure class="caseStudyImages">
-            <img src="/Images/EECUBudgetCalculator/image1.png" alt="Top of main page - Introduction paragraph and nav bar">
+        <figure id="caseStudyImages">
+            <img src="/Images/EECUBudgetCalculator/image1.png"
+                alt="Top of main page - Introduction paragraph and nav bar">
             <img src="/Images/EECUBudgetCalculator/image2.svg" alt="Main input forms - Input salary and calculate tax">
             <img src="/Images/EECUBudgetCalculator/image3.svg" alt="Input fields and donut chart">
             <img src="/Images/EECUBudgetCalculator/image4.svg" alt="Summary page based on net income">
             <figcaption>Images of the project in action</figcaption>
         </figure>
 
-        <section class="techStack">
+        <section id="techStack">
             <h2>The Tech Stack</h2>
             <ul>
                 <li>
@@ -73,9 +92,15 @@
                 <li>
                     <h3>Tools</h3>
                     <figure>
-                        <a href="https://www.flaticon.com/free-icons/cat" title="cat icons"><img src="/Images/DeploymentLogos/GitHub.svg" alt="GitHub logo"></a>
-                        <a title="Microsoft, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Visual_Studio_Code_1.35_icon.svg"><img alt="Visual Studio Code Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/960px-Visual_Studio_Code_1.35_icon.svg.png"></a>
-                        <a title="Figma, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Figma-logo.svg"><img alt="Figma logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/500px-Figma-logo.svg.png"></a>
+                        <a href="https://www.flaticon.com/free-icons/cat" title="cat icons"><img
+                                src="/Images/DeploymentLogos/GitHub.svg" alt="GitHub logo"></a>
+                        <a title="Microsoft, Public domain, via Wikimedia Commons"
+                            href="https://commons.wikimedia.org/wiki/File:Visual_Studio_Code_1.35_icon.svg"><img
+                                alt="Visual Studio Code Logo"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/960px-Visual_Studio_Code_1.35_icon.svg.png"></a>
+                        <a title="Figma, Public domain, via Wikimedia Commons"
+                            href="https://commons.wikimedia.org/wiki/File:Figma-logo.svg"><img alt="Figma logo"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/500px-Figma-logo.svg.png"></a>
                     </figure>
                 </li>
 
@@ -88,14 +113,15 @@
             </ul>
         </section>
 
-        <section class="conceptsLearned">
+        <section id="conceptsLearned">
             <h2>Concepts Learned</h2>
             <ul>
                 <li>
                     <img src="/Images/EECUBudgetCalculator/ConceptLogos/chartJS.png" alt="Chart JS logo">
                     <div class="CLTextContent">
                         <h3>Chart.js</h3>
-                        <p>Utilized chart.js to generate a live updating donut chart of the user&#39;s expenses per category
+                        <p>Utilized chart.js to generate a live updating donut chart of the user&#39;s expenses per
+                            category
                         </p>
                     </div>
                 </li>
@@ -141,7 +167,8 @@
                             &lt;select&gt; dropdown did not seem to be able to access any &lt;option&gt; elements nor
                             their values.</li>
                         <li><strong>The Solution:</strong> After searching online, a thread on StackOverflow helped me
-                            realize that the dropdown must finish loading before proceeding with the rest of the code&#39;s
+                            realize that the dropdown must finish loading before proceeding with the rest of the
+                            code&#39;s
                             initialization and iteration of the DOM.</li>
                     </ul>
                 </li>
