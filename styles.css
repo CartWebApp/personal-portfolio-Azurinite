@@ -333,3 +333,194 @@ nav a {
         }
     }
 }
+
+
+
+/* Resume */
+
+.resume h1 {
+    font-size: 8rem;
+    font-weight: 400;
+}
+
+.resume #wholeResume {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    border: 3px solid var(--primary-red);
+    border-radius: var(--border-radius);
+    padding: 25px;
+}
+
+.resume #header {
+    display: flex;
+    justify-content: space-between;
+
+    & h2 {
+        font-size: 7.25rem;
+        font-weight: 800;
+        margin: 0;
+    }
+    & #resumeTitle p {
+        font-size: 4rem;
+        margin: 0;
+    }
+
+    & #links {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        & .resumeLink p {
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        & .resumeLink a {
+            font-size: 1.35rem;
+            font-weight: 200;
+        }
+    }
+}
+
+.resume .sectionHeader {
+    font-weight: 800;
+    font-size: 4.5rem;
+    margin: 0;
+
+    border-bottom: 10px solid var(--primary-white);
+}
+
+.resume section p {
+    font-size: 1.75rem;
+}
+
+.resume section .resumeListName {
+    font-weight: 500;
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+.resume section ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.resume section li {
+    font-size: 1.75rem;
+    font-weight: 200;
+    margin: 0;
+}
+
+
+
+/* Contact */
+
+.contact main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact h1 {
+    text-align: center;
+    font-size: 8rem;
+    margin: 0;
+}
+
+.contact #sendMeAMessage {
+    text-align: center;
+    font-size: 5rem;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border: 4px solid var(--primary-red);
+}
+
+.contact form {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    width: 80%;
+    row-gap: 50px;
+    column-gap: 30px;
+
+    & input {
+        background: 0;
+        border: 0;
+        border-bottom: 2px solid var(--primary-red);
+
+        text-indent: 10px;
+        padding: 10px 0px;
+        color: var(--primary-white)
+    }
+
+    & .contactInputField {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    & #messageField {
+        grid-column: span 2;
+    }
+
+    & button {
+        place-self: end;
+        grid-column: span 2;
+        width: auto;
+        padding: 20px 40px;
+        color: var(--primary-white);
+
+        
+        background-color: var(--second-black);
+        border: 3px solid var(--primary-red);
+        border-radius: var(--border-radius);
+
+        &:hover {
+            background-color: #494949;
+        }
+    }
+}
+
+.contact footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact footer h2 {
+    font-size: 5rem;
+    text-align: center;
+}
+
+.contact footer ul {
+    display: grid;
+    place-content: center;
+    row-gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-template-rows:  repeat(4, 1fr);
+    width: 100%;
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+
+    & li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: auto;
+        margin: 0;
+
+        & img {
+            max-width: 6rem;
+        }
+
+        & a {
+            font-size: 1.25rem;
+        }
+    }
+}

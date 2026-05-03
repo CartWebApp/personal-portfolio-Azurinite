@@ -18,17 +18,25 @@
 
     <main>
         <h1>Want to get in touch?</h1>
-        <p>Send Me a Message!</p>
+        <p id="sendMeAMessage">Send Me a Message!</p>
 
         <form id="contactForm">
-            <label for="yourName">Your Name *</label>
-            <input type="text" name="yourName" id="yourName" placeholder="Enter Your Name">
+            <div id="nameField" class="contactInputField">
+                <label for="yourName">Your Name *</label>
+                <input type="text" name="yourName" id="yourName" placeholder="Enter Your Name">
+            </div>
 
-            <label for="yourEmail">Your Email *</label>
-            <input type="text" name="yourEmail" id="yourEmail" placeholder="Enter Your Email">
+            <div id="emailField" class="contactInputField">
+                <label for="yourEmail">Your Email *</label>
+                <input type="text" name="yourEmail" id="yourEmail" placeholder="Enter Your Email">
+            </div>
 
-            <label for="yourMessage">Your Message *</label>
-            <input type="text" name="yourMessage" id="yourMessage" placeholder="Enter Your Message">
+            <div id="messageField" class="contactInputField">
+                <label for="yourMessage">Your Message *</label>
+                <input type="text" name="yourMessage" id="yourMessage" placeholder="Enter Your Message">
+            </div>
+
+            <button type="submit" id="sendMessage">Send</button>
         </form>
     </main>
 
@@ -36,19 +44,19 @@
         <h2>You may also contact me by these means:</h2>
         <ul>
             <li>
-                <img src="" alt="">
+                <img src="Images/ContactLogos/emailImage.png" alt="Email image vector">
                 <a href="mailto:ryangip3@gmail.com">ryangip3@gmail.com</a>
             </li>
             <li>
-                <img src="" alt="">
+                <img src="Images/ContactLogos/LinkedinLogo.png" alt="LinkedIn logo">
                 <a href="https://www.linkedin.com/in/ryangip">https://www.linkedin.com/in/ryangip</a>
             </li>
             <li>
-                <img src="" alt="">
+                <img src="Images/ContactLogos/gitHubLogo.png" alt="GitHub logo">
                 <a href="https://github.com/Azurinite">https://github.com/Azurinite</a>
             </li>
             <li>
-                <img src="" alt="">
+                <img src="Images/ContactLogos/PhoneImage.png" alt="Telephone vector image">
                 <a href="tel:+5592939574">559-293-9574</a>
             </li>
         </ul>
