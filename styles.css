@@ -24,7 +24,7 @@ h3 {
 }
 
 p {
-    font-size: 50px;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 200;
 }
 
@@ -38,6 +38,7 @@ a {
 /* Universal nav bar */
 header {
     padding: 10px;
+    margin-bottom: 100px;
 }
 
 nav {
@@ -67,18 +68,18 @@ nav a {
 }
 
 .homePage #greeting h1 {
-    font-size: 125px;
+    font-size: clamp(10rem,99vh,12rem);
     margin: 0px;
 }
 
 .homePage #greeting #BigRedName {
     color: var(--primary-red);
-    font-size: 225px;
+    font-size: clamp(16rem,5vw,18rem);
 }
 
 .homePage h2 {
     text-align: center;
-    font-size: 80px;
+    font-size: clamp(6rem, 5vw, 8rem);
 }
 
 .homePage ul li {
@@ -103,21 +104,21 @@ nav a {
         }
 
         &>p {
-            font-size: 40px;
+            font-size: clamp(2rem, 5vw, 3rem);
         }
 
         &>h3 {
-            font-size: 50px;
+            font-size: clamp(3rem, 5vw, 4rem);;
         }
 
         &>time {
-            font-size: 30px;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
             opacity: 0.7;
         }
 
         &>a {
             padding: 20px;
-            font-size: 30px;
+            font-size: clamp(1rem, 5vw, 2rem);
             font-weight: 400;
             background-color: var(--second-black);
             border-radius: var(--border-radius);
@@ -131,7 +132,6 @@ nav a {
 }
 
 .homePage footer {
-    margin-top: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,18 +145,18 @@ nav a {
 
 .homePage footer h2 {
     text-align: center;
-    font-size: 125px;
+    font-size: clamp(5rem, 10vw, 8rem);
 }
 
 .homePage footer p {
     text-align: center;
-    font-size: 70px;
+    font-size: clamp(3rem, 5vw, 6rem);
 }
 
 .homePage footer a {
     text-align: center;
     padding: 20px;
-    font-size: 30px;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 400;
     background-color: var(--second-black);
     border-radius: var(--border-radius);
@@ -170,13 +170,17 @@ nav a {
 
 /* About Me page */
 
+.aboutMe h1 {
+    margin-top: 0;
+}
+
 .aboutMe h1,
 .aboutMe h2 {
-    font-size: 7rem;
+    font-size: clamp(4rem, 15vw, 7rem);
 }
 
 .aboutMe p {
-    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 5vw, 2.25rem);
 }
 
 .aboutMe #yearInReview h2,
@@ -186,18 +190,22 @@ nav a {
 
 .aboutMe #aboutMeAndIndex {
     display: grid;
-    grid-template: auto / 0.7fr 0.35fr;
+    grid-template: auto / repeat(auto-fit, minmax(75px, 1fr));
+    align-items: start;
     gap: 80px;
 }
 
 .aboutMe #aboutMeAndIndex article {
-    font-size: 1rem;
+    font-size: clamp(2rem,10vw,5rem);
+    grid-column: span 5;
 }
 
 .aboutMe #aboutMeAndIndex #index {
     color: white;
     display: flex;
     flex-direction: column;
+    grid-column: span 3;
+    margin-top: 30px;
 
     & h2 {
         font-size: 2.5rem;
@@ -228,7 +236,7 @@ nav a {
 
 .aboutMe #yearInReview .content {
     display: grid;
-    grid-template: 1fr / 1fr 1fr;
+    grid-template: 1fr / repeat(auto-fit, minmax(400px, 1fr));
     gap: 5%;
 
     & img {
@@ -251,7 +259,7 @@ nav a {
 
 .aboutMe #awardsAndAchievements .content {
     display: grid;
-    grid-template: 1fr / 1fr 1fr;
+    grid-template: 1fr / repeat(auto-fit, minmax(400px, 1fr));
     gap: 25px;
 
     & .awardItem {
@@ -260,33 +268,40 @@ nav a {
         align-items: center;
         justify-content: space-around;
 
-        padding: 20px;
+        padding: 40px;
         background-color: var(--second-black);
         border-radius: var(--border-radius);
 
         & h3 {
-            font-weight: 500;
-            font-size: 1.5rem;
+            font-weight: bold;
+            font-size: clamp(2rem, 10vw, 4rem);
             text-align: center;
         }
 
         & img {
             width: 100%;
+            object-fit: cover;
         }
 
         & .awardPictures {
             display: grid;
             grid-template: 1fr / 1fr 1fr;
             gap: 5px;
+            width: 100%;
+        }
+
+        & p {
+            font-size: clamp(2rem, 10vw, 3rem);
         }
     }
 }
 
 .aboutMe #certification .content {
     display: flex;
-    gap: 5%;
+    align-items: flex-start;
+    gap: clamp(10px, 5%, 50px);
 
-    padding: 20px;
+    padding: 40px;
     border-radius: var(--border-radius);
     background-color: var(--second-black);
 
@@ -297,33 +312,33 @@ nav a {
     }
 
     & h3 {
-        font-size: 3rem;
-
+        font-size: clamp(1.5rem,5vw,5rem);
+        margin-top: 0;
     }
 
     & ul {
-        font-size: 2rem;
+        font-size: clamp(1.5rem,5vw,4rem);
     }
 }
 
 .aboutMe #hobbies .content {
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
     gap: 5%;
 
     & li {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        gap: 50px;
 
         padding: 20px;
         background-color: var(--second-black);
         border-radius: 15px;
 
         & h3 {
-            font-weight: 500;
-            font-size: 2rem;
+            font-weight: 600;
+            font-size: clamp(1.75rem,5vw,2.5rem);
             text-align: center;
             margin: 0px;
         }
@@ -333,7 +348,7 @@ nav a {
         }
 
         & p {
-            font-size: 2rem;
+            font-size: clamp(1.75rem,5vw,2rem);
             margin: 0px;
         }
     }
@@ -361,15 +376,16 @@ nav a {
 .resume #header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     & h2 {
-        font-size: 7.25rem;
-        font-weight: 800;
+        font-size: clamp(6.5rem,15vw,12rem);
+        font-weight: bold;
         margin: 0;
     }
 
     & #resumeTitle p {
-        font-size: 4rem;
+        font-size: clamp(4rem,10vw,9rem);
         margin: 0;
     }
 
@@ -380,19 +396,19 @@ nav a {
 
         & .resumeLink p {
             font-weight: 600;
-            font-size: 1.5rem;
+            font-size: clamp(1.5rem,5vw,3.5rem);
             margin: 0;
         }
 
         & .resumeLink a {
-            font-size: 1.35rem;
+            font-size: clamp(1.35rem,5vw,3.25rem);
             font-weight: 200;
         }
     }
 }
 
 .resume .sectionHeader {
-    font-weight: 800;
+    font-weight: bold;
     font-size: 4.5rem;
     margin: 0;
 
@@ -433,33 +449,38 @@ nav a {
 
 .contact h1 {
     text-align: center;
-    font-size: 8rem;
+    font-size: clamp(6rem,10vw,12rem);
     margin: 0;
 }
 
 .contact #sendMeAMessage {
     text-align: center;
-    font-size: 5rem;
-    padding: 20px;
+    font-size: clamp(3rem,7vw,7rem);
+    padding: 30px;
     border-radius: var(--border-radius);
-    border: 4px solid var(--primary-red);
+    border: clamp(3px, 5vw, 6px) solid var(--primary-red);
 }
 
 .contact form {
     display: grid;
     grid-template: 1fr / 1fr 1fr;
-    width: 80%;
     row-gap: 50px;
     column-gap: 30px;
+    width: 80%;
 
     & input {
         background: 0;
         border: 0;
-        border-bottom: 2px solid var(--primary-red);
-
+        border-bottom: clamp(2px,5vw,4px) solid var(--primary-red);
+        
+        font-size: clamp(1.25rem,5vw,2rem);
         text-indent: 10px;
         padding: 10px 0px;
         color: var(--primary-white)
+    }
+
+    & label {
+        font-size: clamp(1.25rem,5vw,2rem);
     }
 
     & .contactInputField {
@@ -498,14 +519,14 @@ nav a {
 }
 
 .contact footer h2 {
-    font-size: 5rem;
+    font-size: clamp(3rem,5vw,6rem);
     text-align: center;
 }
 
 .contact footer ul {
     display: grid;
     place-content: center;
-    row-gap: 40px;
+    gap: 40px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     width: 100%;
     padding: 0;
@@ -525,7 +546,8 @@ nav a {
         }
 
         & a {
-            font-size: 1.25rem;
+            font-size: clamp(2rem,5vw,3rem);
+            word-break: break-all;
         }
     }
 }
@@ -536,31 +558,33 @@ nav a {
 
 .programmingStudy #introLayout {
     display: grid;
-    grid-template: 1fr/ 1fr 0.5fr;
+    grid-template: 1fr/ repeat(auto-fit, minmax(250px,1fr));
     justify-content: space-between;
+
     gap: 7.5%;
 
     & #projectBrief {
+        grid-column: span 2;
         display: flex;
         flex-direction: column;
         width: auto;
 
         & p {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 5vw, 5rem);
         }
     }
 
     &>ul {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 60px;
 
-        border-left: 4px solid var(--primary-red);
+        border-left: 6px solid var(--primary-red);
         padding-left: 50px;
 
         & h2 {
             font-weight: 600;
-            font-size: 2rem;
+            font-size: clamp(1.25rem,5vw,2.5rem);
             margin: 0;
         }
 
@@ -568,19 +592,25 @@ nav a {
         &>li,
         & a {
             margin: 0;
-            font-size: 2rem;
+            font-size: clamp(1rem,5vw,2.25rem);
             list-style-type: none;
             overflow-wrap: anywhere;
+        }
+
+        & ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
     }
 }
 
 .programmingStudy h1 {
-    font-size: 8rem;
+    font-size: clamp(6rem, 5vw, 15rem);
 }
 
 .programmingStudy h2 {
-    font-size: 6rem;
+    font-size: clamp(4rem, 5vw, 6rem);
     font-weight: 500;
 }
 
@@ -596,7 +626,7 @@ nav a {
 
 .programmingStudy #techStack ul {
     display: grid;
-    grid-template: 1fr / 1fr 1fr 1fr;
+    grid-template: 1fr / repeat(auto-fit, minmax(300px,1fr));
     gap: 3%;
     list-style-type: none;
     padding-left: 0;
@@ -608,7 +638,7 @@ nav a {
         border-radius: var(--border-radius);
 
         & h3 {
-            font-size: 2rem;
+            font-size: clamp(2rem, 5vw, 6rem);
             font-weight: 500;
             padding-left: 25px;
         }
@@ -617,10 +647,12 @@ nav a {
             display: flex;
             align-items: center;
             justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 50px;
 
             & img {
-                flex: 1 1 auto;
-                width: 70px;
+                flex: 0 1 200px;
+                width: 200px;
             }
         }
     }
@@ -770,7 +802,7 @@ nav a {
         flex-direction: column;
         gap: 40px;
 
-        border-left: 4px solid var(--primary-red);
+        border-left: 6px solid var(--primary-red);
         padding-left: 50px;
 
         & h2 {
@@ -834,5 +866,36 @@ nav a {
 
     & p {
         margin: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Necessary Media Queries (when the wrap refuses to abide... hopefully because I only want it to wrap when the content shrinks to a very certain point) */
+
+@media screen and (max-width: 760px) {
+    .aboutMe #certification .content {
+        align-items: center;
+        flex-direction: column;
+
+        & img {
+            flex: 1 1 100%;
+            width: 100%;
+        }
+    }
+
+    .contact form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 }
