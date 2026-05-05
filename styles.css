@@ -37,20 +37,25 @@ a {
 
 /* Universal nav bar */
 header {
-    padding: 10px;
-    margin-bottom: 100px;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-black);
+    z-index: 100;
+    padding: 20px;
+    border-bottom: 3px solid var(--primary-red);
 }
 
 nav {
     display: flex;
     justify-content: flex-end;
+    width: 100%;
     gap: 50px
 }
 
 nav a {
     color: var(--primary-white);
     text-decoration: none;
-    font-size: 25px;
+    font-size: clamp(1rem, 5vw, 2rem);
 
     &:hover {
         text-decoration: underline;
@@ -190,7 +195,7 @@ nav a {
 
 .aboutMe #aboutMeAndIndex {
     display: grid;
-    grid-template: auto / repeat(auto-fit, minmax(75px, 1fr));
+    grid-template: auto / repeat(auto-fit, minmax(30px, 1fr));
     align-items: start;
     gap: 80px;
 }
@@ -204,11 +209,12 @@ nav a {
     color: white;
     display: flex;
     flex-direction: column;
-    grid-column: span 3;
+    grid-column: span 3 / -1;
     margin-top: 30px;
 
     & h2 {
-        font-size: 2.5rem;
+        font-size: clamp(3rem, 5vw, 4rem);
+        margin: 0;
     }
 
     & ul {
@@ -223,7 +229,7 @@ nav a {
         gap: 15px;
 
         & p {
-            font-size: 1.25rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
             margin: 0px;
         }
 
@@ -325,6 +331,8 @@ nav a {
     display: grid;
     grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
     gap: 5%;
+    padding-left: 0;
+    margin-left: 0;
 
     & li {
         display: flex;
@@ -473,8 +481,8 @@ nav a {
         border: 0;
         border-bottom: clamp(2px,5vw,4px) solid var(--primary-red);
         
-        font-size: clamp(1.25rem,5vw,2rem);
-        text-indent: 10px;
+        font-size: clamp(1.25rem,5vw,1.75rem);
+        text-indent: 15px;
         padding: 10px 0px;
         color: var(--primary-white)
     }
@@ -496,9 +504,11 @@ nav a {
     & button {
         place-self: end;
         grid-column: span 2;
-        width: auto;
-        padding: 20px 40px;
+        padding: 20px;
         color: var(--primary-white);
+        width: clamp(300px, 5vw, 700px);
+        height: auto;
+        font-size: clamp(2rem, 5vw, 3rem);
 
 
         background-color: var(--second-black);
@@ -556,15 +566,21 @@ nav a {
 
 /* Programming Case Study Page */
 
+.programmingStudy main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
 .programmingStudy #introLayout {
     display: grid;
-    grid-template: 1fr/ repeat(auto-fit, minmax(250px,1fr));
+    grid-template: 1fr/ repeat(auto-fit, minmax(100px,1fr));
     justify-content: space-between;
 
-    gap: 7.5%;
+    gap: clamp(10px,7.5%,50px);
 
     & #projectBrief {
-        grid-column: span 2;
+        grid-column: span 4;
         display: flex;
         flex-direction: column;
         width: auto;
@@ -575,6 +591,7 @@ nav a {
     }
 
     &>ul {
+        grid-column: span 3;
         display: flex;
         flex-direction: column;
         gap: 60px;
@@ -626,19 +643,19 @@ nav a {
 
 .programmingStudy #techStack ul {
     display: grid;
-    grid-template: 1fr / repeat(auto-fit, minmax(300px,1fr));
-    gap: 3%;
+    grid-template: 1fr / repeat(auto-fit, minmax(325px,1fr));
+    gap: clamp(20px, 5vw, 50px);
     list-style-type: none;
     padding-left: 0;
     margin-left: 0;
 
     & li {
-        width: 100%;
         background-color: var(--second-black);
         border-radius: var(--border-radius);
+        padding: 20px;
 
         & h3 {
-            font-size: clamp(2rem, 5vw, 6rem);
+            font-size: clamp(3rem, 4vw, 6rem);
             font-weight: 500;
             padding-left: 25px;
         }
@@ -651,8 +668,13 @@ nav a {
             gap: 50px;
 
             & img {
-                flex: 0 1 200px;
+                flex: 0.2 1 200px;
                 width: 200px;
+
+                &[alt="Netlify logo"] {
+                    flex: 1 1 100%;
+                    width: 100%;
+                }
             }
         }
     }
@@ -661,13 +683,14 @@ nav a {
 .programmingStudy #conceptsLearned ul {
     display: flex;
     flex-direction: column;
-    gap: 150px;
+    gap: clamp(50px, 5vw, 150px);
+    padding-left: 0;
+    margin-left: 0;
 
     & li {
         display: flex;
-        justify-content: space-between;
         align-items: flex-start;
-        gap: 50px;
+        gap: clamp(20px, 5vw, 50px);
 
         & img {
             aspect-ratio: 1/1;
@@ -682,13 +705,13 @@ nav a {
             gap: 20px;
 
             & h3 {
-                font-size: 4rem;
+                font-size: clamp(2rem,5vw,8rem);
                 font-weight: 600;
                 margin: 0;
             }
 
             & p {
-                font-size: 3rem;
+                font-size: clamp(2rem, 5vw, 3.5rem);
                 margin: 0;
             }
         }
@@ -702,7 +725,7 @@ nav a {
     list-style-type: none;
     padding-left: 0px;
     margin-left: 0;
-    font-size: 1.5rem;
+    font-size: clamp(0.9rem, 5vw, 2.25rem);
 
     &>li {
         border-radius: var(--border-radius);
@@ -729,11 +752,12 @@ nav a {
 
 .programmingStudy #habitsOfMind ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     list-style-type: none;
     padding-left: 0;
     margin-left: 0;
-    gap: 5%;
+    gap: clamp(15px, 5%, 50px);
 
     & li {
         display: flex;
@@ -742,16 +766,17 @@ nav a {
         background-color: var(--second-black);
         border-radius: var(--border-radius);
         padding: 40px;
-        width: 50%;
+        flex: 1 1 300px;
+        width: 100%;
 
         & h3 {
-            font-size: 4rem;
+            font-size: clamp(2rem, 5vw, 4.5rem);
             font-weight: bold;
             margin: 0;
         }
 
         & p {
-            font-size: 2rem;
+            font-size: clamp(1rem, 5vw, 2.25rem);
         }
     }
 }
@@ -768,26 +793,28 @@ nav a {
 }
 
 .writingStudy h1 {
+    font-size: clamp(6rem, 5vw, 15rem);
     align-self: flex-start;
-    font-size: 8rem;
 }
 
 .writingStudy h2 {
-    font-size: 6rem;
+    font-size: clamp(4rem, 5vw, 6rem);
+    font-weight: 500;
 }
 
 .writingStudy p,
 .writingStudy li {
-    font-size: 2rem;
+    font-size: clamp(1rem,7vw,2.25rem);
 }
 
 .writingStudy #introLayout {
     display: grid;
-    grid-template: 1fr/ 1fr 0.5fr;
+    grid-template: 1fr / repeat(auto-fit, minmax(100px,1fr));
     justify-content: space-between;
     gap: 7.5%;
 
     & #projectBrief {
+        grid-column: span 4;
         display: flex;
         flex-direction: column;
         width: auto;
@@ -798,6 +825,7 @@ nav a {
     }
 
     & aside {
+        grid-column: span 3;
         display: flex;
         flex-direction: column;
         gap: 40px;
@@ -822,7 +850,7 @@ nav a {
 .writingStudy .content {
     display: flex;
     align-items: flex-start;
-    gap: 5%;
+    gap: clamp(10px, 5%, 50px);
 
     & img {
         max-width: 50%;
