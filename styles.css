@@ -55,7 +55,7 @@ nav {
 nav a {
     color: var(--primary-white);
     text-decoration: none;
-    font-size: clamp(1rem, 5vw, 2rem);
+    font-size: clamp(1rem, 5vw, 1.5rem);
 
     &:hover {
         text-decoration: underline;
@@ -73,13 +73,13 @@ nav a {
 }
 
 .homePage #greeting h1 {
-    font-size: clamp(10rem,99vh,12rem);
+    font-size: clamp(4rem,8vw,10rem);
     margin: 0px;
 }
 
 .homePage #greeting #BigRedName {
     color: var(--primary-red);
-    font-size: clamp(16rem,5vw,18rem);
+    font-size: clamp(10rem,8vw,16rem);
 }
 
 .homePage h2 {
@@ -627,7 +627,7 @@ nav a {
 }
 
 .programmingStudy h2 {
-    font-size: clamp(4rem, 5vw, 6rem);
+    font-size: clamp(4rem, 8vw, 8rem);
     font-weight: 500;
 }
 
@@ -650,6 +650,9 @@ nav a {
     margin-left: 0;
 
     & li {
+        display: flex;
+        flex-direction: column;
+
         background-color: var(--second-black);
         border-radius: var(--border-radius);
         padding: 20px;
@@ -666,6 +669,7 @@ nav a {
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 50px;
+            padding: auto;
 
             & img {
                 flex: 0.2 1 200px;
@@ -674,6 +678,9 @@ nav a {
                 &[alt="Netlify logo"] {
                     flex: 1 1 100%;
                     width: 100%;
+                    border-radius: var(--border-radius);
+                    background-color: var(--primary-white);
+                    padding: 20px;
                 }
             }
         }
@@ -690,12 +697,14 @@ nav a {
     & li {
         display: flex;
         align-items: flex-start;
+        justify-content: space-between;
         gap: clamp(20px, 5vw, 50px);
 
         & img {
             aspect-ratio: 1/1;
             object-fit: contain;
             max-width: 30%;
+            margin: 0 auto;
         }
 
         & .CLTextContent {
@@ -703,6 +712,7 @@ nav a {
             flex-direction: column;
             justify-content: space-between;
             gap: 20px;
+            width: 60%;
 
             & h3 {
                 font-size: clamp(2rem,5vw,8rem);
@@ -792,14 +802,24 @@ nav a {
     gap: 50px;
 }
 
+.writingStudy section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .writingStudy h1 {
     font-size: clamp(6rem, 5vw, 15rem);
     align-self: flex-start;
 }
 
 .writingStudy h2 {
-    font-size: clamp(4rem, 5vw, 6rem);
+    font-size: clamp(4rem, 8vw, 8rem);
     font-weight: 500;
+}
+.writingStudy #problemsAndSolutions h2 {
+    text-align: left;
+    align-self: flex-end;
 }
 
 .writingStudy p,
@@ -903,14 +923,11 @@ nav a {
 
 
 
-
-
-
-
-
 /* Necessary Media Queries (when the wrap refuses to abide... hopefully because I only want it to wrap when the content shrinks to a very certain point) */
 
 @media screen and (max-width: 760px) {
+    /* About Me */
+
     .aboutMe #certification .content {
         align-items: center;
         flex-direction: column;
@@ -921,9 +938,28 @@ nav a {
         }
     }
 
+    /* Contact pages */
+
     .contact form {
         display: flex;
         flex-direction: column;
         width: 100%;
+    }
+
+    /* Writing Case Studies */
+
+    .writingStudy .content {
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(10px, 5%, 50px);
+    
+        & img {
+            max-width: 100%;
+            order: 1;
+        }
+    
+        &>ul {
+            width: 100%;
+        }
     }
 }
