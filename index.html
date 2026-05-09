@@ -27,60 +27,112 @@
 
         <section id="programmingCaseStudiesList">
             <h2>Programming Case Studies</h2>
-            <ul>
-                <li id="bioShield">
-                    <div class="caseStudyContent">
-                        <p>Case Study 01</p>
-                        <h3>Bio Shield</h3>
-                        <time datetime="2025-09-22">September 22nd, 2025</time>
-                        <a href="caseStudies/bioshield.html">View Case Study</a>
-                        <!--Maybe not an <a>! We could have an animation from home page to case study-->
-                    </div>
+            <section id="bioShieldCard" class="programmingItem">
+                <svg>
+                    <circle/>
+                </svg>
+                <div class="caseStudyContent hidden">
+                    <p>Case Study 01</p>
+                    <h3>Bio Shield</h3>
                     <img src="Images/BioShield/image1.png" alt="Bio Shield home page">
-                </li>
-                <li id="pawPal">
-                    <div class="caseStudyContent">
-                        <p>Case Study 02</p>
-                        <h3>PawPal</h3>
-                        <time datetime="2025-11-03">November 3rd, 2025</time>
-                        <a href="caseStudies/pawpal.html">View Case Study</a>
-                    </div>
+                    <a href="caseStudies/bioshield.html">See More</a>
+                </div>
+            </section>
+            <section id="pawPalCard"  class="programmingItem">
+                <svg>
+                    <circle/>
+                </svg>
+                <div class="caseStudyContent hidden">
+                    <p>Case Study 02</p>
+                    <h3>PawPal</h3>
                     <img src="Images/PawPal/image1.png" alt="PawPal home page">
-                </li>
-                <li id="EECUBudgetCalculator">
-                    <div class="caseStudyContent">
-                        <p>Case Study 03</p>
-                        <h3>EECU Budget Calculator</h3>
-                        <time datetime="2025-03-16">March 16th, 2025</time>
-                        <a href="caseStudies/eecubudgetcalculator.html">View Case Study</a>
-                    </div>
+                    <a href="caseStudies/pawpal.html">See More</a>
+                </div>
+            </section>
+            <section id="EECUBudgetCalculatorCard" class="programmingItem">
+                <svg>
+                    <circle/>
+                </svg>
+                <div class="caseStudyContent hidden">
+                    <p>Case Study 03</p>
+                    <h3>EECU Budget Calculator</h3>
                     <img src="Images/EECUBudgetCalculator/image1.png" alt="EECU Budget Calculator introduction">
-                </li>
-            </ul>
+                    <a href="caseStudies/eecubudgetcalculator.html">See More</a>
+                </div>
+            </section>
         </section>
 
         <section id="writingCaseStudiesList">
             <h2>Writing Case Studies</h2>
-            <ul>
-                <li id="researchPaper">
-                    <div class="caseStudyContent">
-                        <p>Case Study 04</p>
-                        <h3>Research Paper</h3>
-                        <time datetime="2025-09-22">September 22nd, 2025</time>
-                        <a href="caseStudies/researchpaper.html">View Case Study</a>
-                    </div>
-                </li>
-                <li id="CARTShowcaseReflection">
-                    <div class="caseStudyContent">
-                        <p>Case Study 05</p>
-                        <h3>CART Showcase Reflection</h3>
-                        <time datetime="2025-09-22">September 22nd, 2025</time>
-                        <a href="caseStudies/cartshowcase.html">View Case Study</a>
-                    </div>
-
-                </li>
-            </ul>
+            <section id="researchPaperCard" class="writingItem">
+                <svg>
+                    <circle/>
+                </svg>
+                <div class="caseStudyContent hidden">
+                    <p>Case Study 04</p>
+                    <h3>Research Paper</h3>
+                    <a href="caseStudies/researchpaper.html">See More</a>
+                </div>
+            </section>
+            <section id="CARTShowcaseReflectionCard" class="writingItem">
+                <svg>
+                    <circle/>
+                </svg>
+                <div class="caseStudyContent hidden">
+                    <p>Case Study 05</p>
+                    <h3>CART Showcase Reflection</h3>
+                    <a href="caseStudies/cartshowcase.html">See More</a>
+                </div>
+            </section>
         </section>
+
+        <dialog id="bioShield">
+            <div class="caseStudyContent">
+                <p>Case Study 01</p>
+                <h3>Bio Shield</h3>
+                <time datetime="2025-09-22">September 22nd, 2025</time>
+                <a href="caseStudies/bioshield.html">View Case Study</a>
+                <!--Maybe not an <a>! We could have an animation from home page to case study-->
+            </div>
+            <img src="Images/BioShield/image1.png" alt="Bio Shield home page">
+        </dialog>
+        <dialog id="pawPal">
+            <div class="caseStudyContent">
+                <p>Case Study 02</p>
+                <h3>PawPal</h3>
+                <time datetime="2025-11-03">November 3rd, 2025</time>
+                <a href="caseStudies/pawpal.html">View Case Study</a>
+            </div>
+            <img src="Images/PawPal/image1.png" alt="PawPal home page">
+        </dialog>
+        <dialog id="EECUBudgetCalculator">
+            <div class="caseStudyContent">
+                <p>Case Study 03</p>
+                <h3>EECU Budget Calculator</h3>
+                <time datetime="2025-03-16">March 16th, 2025</time>
+                <a href="caseStudies/eecubudgetcalculator.html">View Case Study</a>
+            </div>
+            <img src="Images/EECUBudgetCalculator/image1.png" alt="EECU Budget Calculator introduction">
+        </dialog>
+        <dialog id="researchPaper">
+            <div class="caseStudyContent">
+                <p>Case Study 04</p>
+                <h3>Research Paper</h3>
+                <time datetime="2025-09-22">September 22nd, 2025</time>
+                <a href="caseStudies/researchpaper.html">See More</a>
+            </div>
+        </dialog>
+        <dialog id="CARTShowcaseReflection">
+            <div class="caseStudyContent">
+                <p>Case Study 05</p>
+                <h3>CART Showcase Reflection</h3>
+                <time datetime="2025-09-22">September 22nd, 2025</time>
+                <a href="caseStudies/cartshowcase.html">See More</a>
+            </div>
+        </dialog>
+
+        <script src="https://cdn.jsdelivr.net/npm/leader-line-new@1.1.9/leader-line.min.js"></script>
+        <script src="script.js"></script>
     </main>
 
     <footer>
