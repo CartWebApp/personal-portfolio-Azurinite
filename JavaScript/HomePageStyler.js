@@ -6,7 +6,6 @@ const researchPaperCard = document.querySelector('#researchPaperCard');
 const CARTShowcaseReflectionCard = document.querySelector('#CARTShowcaseReflectionCard');
 
 // Draw lines between circles
-
 function alignMiddleDot() {
     const dot1 = lineRedirect.getBoundingClientRect();
     const dot2 = researchPaperCard.querySelector("circle").getBoundingClientRect();
@@ -14,9 +13,9 @@ function alignMiddleDot() {
     const pawPalPercent = 0.33;
     const BudgetCalcPercent = 0.66;
 
-    const alignCard = (card,percent) => {
-        const x = dot1.x + percent*(dot2.x - dot1.x);
-        const y = dot1.y + percent*(dot2.y - dot1.y);
+    const alignCard = (card, percent) => {
+        const x = dot1.x + percent * (dot2.x - dot1.x);
+        const y = dot1.y + percent * (dot2.y - dot1.y);
 
         // Gotta account for offset from top of page to programmingCaseStudies section, since the abs. positioning is still scaling to it being inside of the section
         const sectionY = document.querySelector("#programmingCaseStudiesList").getBoundingClientRect().top;
@@ -32,7 +31,7 @@ function alignMiddleDot() {
 // Don't need to redraw lines here since LeaderLine is automatically responsive
 window.addEventListener('resize', () => {
     alignMiddleDot();
-    
+
 });
 
 window.addEventListener('load', () => {
@@ -50,19 +49,19 @@ window.addEventListener('load', () => {
         LeaderLine.pointAnchor(lineRedirect)
     );
     const line2 = newLine(
-        LeaderLine.pointAnchor(lineRedirect), 
+        LeaderLine.pointAnchor(lineRedirect),
         LeaderLine.pointAnchor(pawPalCard.querySelector('circle'))
     );
     const line3 = newLine(
-        LeaderLine.pointAnchor(pawPalCard.querySelector('circle')), 
+        LeaderLine.pointAnchor(pawPalCard.querySelector('circle')),
         LeaderLine.pointAnchor(EECUBudgetCalculatorCard.querySelector('circle'))
     );
     const line4 = newLine(
-        LeaderLine.pointAnchor(EECUBudgetCalculatorCard.querySelector('circle')), 
+        LeaderLine.pointAnchor(EECUBudgetCalculatorCard.querySelector('circle')),
         LeaderLine.pointAnchor(researchPaperCard.querySelector('circle'))
     );
     const line5 = newLine(
-        LeaderLine.pointAnchor(researchPaperCard.querySelector('circle')), 
+        LeaderLine.pointAnchor(researchPaperCard.querySelector('circle')),
         LeaderLine.pointAnchor(CARTShowcaseReflectionCard.querySelector('circle'))
     );
     line5.path = 'grid';
@@ -79,10 +78,10 @@ window.addEventListener('load', () => {
 
     const setUpCard = card => {
         const id = card.id
-        
+
         const caseStudyContent = card.querySelector(".caseStudyContent");
         const viewStudyButton = card.querySelector("button");
-        const overlay = document.querySelector(`#${id.replace("Card","")}`);
+        const overlay = document.querySelector(`#${id.replace("Card", "")}`);
 
         card.addEventListener("mouseenter", () => {
             caseStudyContent.classList.remove("hidden");
