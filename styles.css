@@ -845,7 +845,7 @@ nav a {
     overflow-x: auto;
 
     & img {
-        width: auto;
+        width: 700px;
         object-fit: cover;
     }
 }
