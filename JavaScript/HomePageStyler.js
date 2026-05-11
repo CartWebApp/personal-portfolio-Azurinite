@@ -79,18 +79,18 @@ window.addEventListener('load', () => {
     const setUpCard = card => {
         const id = card.id
 
-        const caseStudyContent = card.querySelector(".caseStudyContent");
+       // const caseStudyContent = card.querySelector(".caseStudyContent");
         const viewStudyButton = card.querySelector("button");
         const overlay = document.querySelector(`#${id.replace("Card", "")}`);
 
-        card.addEventListener("mouseenter", () => {
+     /*   card.addEventListener("mouseenter", () => {
             caseStudyContent.classList.remove("hidden");
             repositionLines();
         });
         card.addEventListener("mouseleave", () => {
             caseStudyContent.classList.add("hidden");
             repositionLines();
-        });
+        }); */
 
         viewStudyButton.addEventListener("click", () => {
             overlay.showModal();
@@ -103,7 +103,7 @@ window.addEventListener('load', () => {
     setUpCard(pawPalCard);
     setUpCard(EECUBudgetCalculatorCard);
     setUpCard(researchPaperCard);
-    setUpCard(CARTShowcaseReflectionCard);
+    setUpCard(CARTShowcaseReflectionCard); 
 
     alignMiddleDot();
     repositionLines();

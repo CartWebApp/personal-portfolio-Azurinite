@@ -10,12 +10,12 @@ form.addEventListener('submit', e => {
 
     const data = new FormData(form);
 
-    fetch('https://script.google.com/macros/s/AKfycbxkeye8YyoeAHFhe7FykZib_IhAN5uDoyATlW56pykBP1WB53rUk2OfvHe7Eh3x52cJ0Q/exec', {
+    const url = 'https://script.google.com/macros/s/AKfycbxkeye8YyoeAHFhe7FykZib_IhAN5uDoyATlW56pykBP1WB53rUk2OfvHe7Eh3x52cJ0Q/exec'
+    fetch(url, {
         method: 'POST',
         body: data
     })
-        .then(res => res.text())
-        .then(response => {
+        .then(res => res.text()).then(response => {
             button.textContent = 'Sent';
             button.classList.add('sent');
             form.reset();
