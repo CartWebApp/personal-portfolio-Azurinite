@@ -604,6 +604,7 @@ nav a {
         
         & textarea {
             padding: 20px;
+            font-size: clamp(0.9rem, 5vw, 1.25rem);
             color: var(--primary-white);
             background-color: var(--second-black);
             border-radius: var(--border-radius);
