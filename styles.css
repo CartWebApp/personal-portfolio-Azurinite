@@ -3,6 +3,7 @@
 
 :root {
     --primary-red: #EB4747;
+    --hover-red: #e68585;
     --primary-white: #EAEAEA;
     --bg-black: #161616;
     --second-black: #272727;
@@ -38,6 +39,30 @@ p {
 a {
     color: white;
     text-decoration: none;
+}
+
+/* Scrollbar stuff */
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--second-black);
+    border: 1px solid var(--primary-red);
+    border-radius: var(--border-radius);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--primary-red);
+    border-radius: var(--border-radius);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-red);
 }
 
 
@@ -90,7 +115,7 @@ nav a {
 
 .homePage h2 {
     text-align: center;
-    font-size: clamp(6rem, 5vw, 8rem);
+    font-size: clamp(4rem, 5vw, 6rem);
 }
 
 .homePage #programmingCaseStudiesList,
@@ -180,7 +205,7 @@ nav a {
         cx: calc(var(--dimension) / 2);
         cy: calc(var(--dimension) / 2);
         r: calc(var(--dimension) / 2);
-        fill: var(--primary-red)
+        fill: var(--primary-red);
     }
 }
 
@@ -191,11 +216,20 @@ nav a {
     }
 
     25% {
+        opacity: 0;
+    }
+
+    45% {
         opacity: 1;
     }
 
-    75% {
+    55% {
         opacity: 1;
+    }
+
+
+    75% {
+        opacity: 0;
     }
 
     100% {
@@ -210,7 +244,8 @@ nav a {
 
     animation: cardFadeIn linear;
     animation-timeline: view();
-    
+
+    z-index: 999;
 
     width: fit-content;
 
@@ -223,7 +258,7 @@ nav a {
     }
 
     & img {
-        width: 200px;
+        width: clamp(200px, 5vw, 250px);
 
         border-radius: var(--border-radius);
         padding: 20px;
@@ -236,12 +271,12 @@ nav a {
     }
 
     &>h3 {
-        font-size: clamp(2.25rem, 5vw, 3.25rem);
+        font-size: clamp(1.75rem, 5vw, 2.75rem);
         text-align: center;
     }
 
     &>button {
-        padding: 20px;
+        padding: clamp(10px, 5vw, 20px);
         font-size: clamp(1rem, 5vw, 2rem);
         font-weight: 400;
         background-color: var(--second-black);
@@ -256,6 +291,27 @@ nav a {
     }
 }
 
+@keyframes openDialog {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes closeDialog {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
 .homePage dialog {
     width: 70%;
     height: 70%;
@@ -263,8 +319,10 @@ nav a {
     background-color: var(--bg-black);
     border: 2px solid var(--primary-red);
     border-radius: var(--border-radius);
-
     color: var(--primary-white);
+
+    animation: closeDialog 0.5s ease-out forwards;
+    transition: display 0.5s allow-discrete, overlay 0.5s allow-discrete;
 
     & .dialogContent {
         display: grid;
@@ -280,17 +338,17 @@ nav a {
 
             & img {
                 width: 100%;
-        
+
                 border-radius: var(--border-radius);
                 padding: 20px;
                 background-color: var(--second-black);
             }
-        
+
             & p {
                 font-size: clamp(1rem, 5vw, 2rem);
                 margin: 0;
             }
-        
+
             & h2 {
                 font-size: clamp(2.5rem, 5vw, 3.5rem);
                 text-align: left;
@@ -301,7 +359,7 @@ nav a {
                 font-size: clamp(1.5rem, 5vw, 2.5rem);
                 color: #eaeaea81;
             }
-        
+
             & a {
                 padding: 20px;
                 font-size: clamp(1rem, 5vw, 2rem);
@@ -310,7 +368,7 @@ nav a {
                 border-radius: var(--border-radius);
                 border: 3px solid var(--primary-red);
                 color: var(--primary-white);
-        
+
                 &:hover {
                     background-color: #494949;
                 }
@@ -328,11 +386,16 @@ nav a {
     }
 }
 
+.homePage dialog[open] {
+    animation: openDialog 0.5s ease-out forwards;
+}
+
 .homePage dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
-    /* Adds a blur effect to the page background */
+    transition: background-color 0.4s ease, display 0.4s ease allow-discrete;
 }
+
 
 .homePage footer {
     display: flex;
@@ -841,12 +904,22 @@ nav a {
 }
 
 .programmingStudy #caseStudyImages {
-    display: flex;
-    overflow-x: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 500px;
+    height: 300px;
+    transform: rotate(90deg);
+    gap: 10px;
+    padding: 20px;
+    background-color: var(--second-black);
+    border-radius: var(--border-radius);
+    scrollbar-color: var(--second-black);
+
 
     & img {
-        width: 700px;
+        width: 1200px;
         object-fit: cover;
+        border-radius: var(--border-radius);
     }
 }
 

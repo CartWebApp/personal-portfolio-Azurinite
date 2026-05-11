@@ -9,6 +9,7 @@ form.addEventListener('submit', e => {
     button.textContent = 'Sending...';
 
     const data = new FormData(form);
+    console.log(data);
 
     const url = 'https://script.google.com/macros/s/AKfycbxkeye8YyoeAHFhe7FykZib_IhAN5uDoyATlW56pykBP1WB53rUk2OfvHe7Eh3x52cJ0Q/exec'
     fetch(url, {
