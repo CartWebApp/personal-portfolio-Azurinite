@@ -601,6 +601,14 @@ nav a {
 
     & #messageField {
         grid-column: span 2;
+        
+        & textarea {
+            padding: 20px;
+            color: var(--primary-white);
+            background-color: var(--second-black);
+            border-radius: var(--border-radius);
+            border: 2px solid var(--primary-red);
+        }
     }
 
     & button {
