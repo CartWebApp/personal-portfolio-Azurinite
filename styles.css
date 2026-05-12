@@ -1,6 +1,52 @@
 @import url('https://googleapis.com');
 /* Import fonts */
 
+@keyframes fadeIntro {
+    0%,
+    70% {
+        opacity: 1;
+    }
+
+    90%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes introduceSection {
+    0%,
+    10% {
+        opacity: 0;
+    }
+
+    37.5%,
+    70% {
+        opacity: 1;
+    }
+
+    90%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes cardFadeIn {
+    0%,
+    25% {
+        opacity: 0;
+    }
+
+    45%,
+    55% {
+        opacity: 1;
+    }
+
+    75%,
+    100% {
+        opacity: 0;
+    }
+}
+
 :root {
     --primary-red: #EB4747;
     --primary-white: #EAEAEA;
@@ -21,7 +67,8 @@ body {
     margin: 0;
 }
 
-main, footer {
+main,
+footer {
     margin: 25px;
 }
 
@@ -120,6 +167,9 @@ header nav a {
 .homePage #greeting h1 {
     font-size: clamp(4rem, 8vw, 10rem);
     margin: 0px;
+
+    animation: fadeIntro linear;
+    animation-timeline: view();
 }
 
 .homePage #greeting #BigRedName {
@@ -127,15 +177,22 @@ header nav a {
     font-size: clamp(6rem, 18vw, 16rem);
 }
 
+.homePage #greeting p {
+    animation: fadeIntro linear;
+    animation-timeline: view();
+}
+
 .homePage h2 {
     text-align: center;
     font-size: clamp(4rem, 5vw, 6rem);
+    animation: introduceSection linear;
+    animation-timeline: view();
 }
 
 .homePage #programmingCaseStudiesList,
 .homePage #writingCaseStudiesList {
     position: relative;
-    margin-bottom: clamp(1200px,5vw,800px);
+    margin-bottom: clamp(1200px, 5vw, 800px);
 
     &>section {
         position: absolute;
@@ -250,25 +307,6 @@ header nav a {
         cy: calc(var(--dimension) / 2);
         r: calc(var(--dimension) / 2);
         fill: var(--primary-red);
-    }
-}
-
-/* Card Fade in */
-@keyframes cardFadeIn {
-
-    0%,
-    25% {
-        opacity: 0;
-    }
-
-    45%,
-    55% {
-        opacity: 1;
-    }
-
-    75%,
-    100% {
-        opacity: 0;
     }
 }
 
@@ -440,6 +478,9 @@ header nav a {
     justify-content: center;
     gap: 50px;
 
+    animation: introduceSection linear;
+    animation-timeline: view();
+
     & * {
         margin: 0px;
     }
@@ -502,6 +543,8 @@ header nav a {
 .aboutMe #aboutMeAndIndex article {
     font-size: clamp(2rem, 10vw, 5rem);
     grid-column: span 5;
+    animation: fadeIntro linear;
+    animation-timeline: view();
 }
 
 .aboutMe #aboutMeAndIndex #index {
@@ -510,6 +553,8 @@ header nav a {
     flex-direction: column;
     grid-column: span 3 / -1;
     margin-top: 30px;
+    animation: fadeIntro linear;
+    animation-timeline: view();
 
     & h2 {
         font-size: clamp(3rem, 5vw, 4rem);
@@ -546,6 +591,7 @@ header nav a {
         &:hover {
             cursor: pointer;
             background-color: var(--hover-black);
+
             & img {
                 background-color: var(--hover-black);
             }
@@ -553,10 +599,27 @@ header nav a {
     }
 }
 
+@keyframes yearInReviewFade {
+    0%, 10% {
+        opacity: 0;
+    }
+
+    20%, 80% {
+        opacity: 1;
+    }
+
+    90%, 100% {
+        opacity: 0;
+    }
+}
+
 .aboutMe #yearInReview .content {
     display: grid;
     grid-template: 1fr / repeat(auto-fit, minmax(400px, 1fr));
     gap: 5%;
+
+    animation: yearInReviewFade linear;
+    animation-timeline: view();
 
     & img {
         max-width: 100%;
@@ -576,45 +639,47 @@ header nav a {
     }
 }
 
-.aboutMe #awardsAndAchievements {
-    & .content {
-        display: grid;
-        grid-template: 1fr / repeat(auto-fit, minmax(400px, 1fr));
-        gap: 25px;
+.aboutMe #awardsAndAchievements .content {
+    display: grid;
+    grid-template: 1fr / repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
 
-        & .awardItem {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
+    animation: introduceSection linear;
+    animation-timeline: view();
 
-            padding: 40px;
-            background-color: var(--second-black);
-            border-radius: var(--border-radius);
+    & .awardItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
 
-            & h3 {
-                font-weight: bold;
-                font-size: clamp(2rem, 10vw, 4rem);
-                text-align: center;
-            }
+        padding: 40px;
+        background-color: var(--second-black);
+        border-radius: var(--border-radius);
 
-            & img {
-                width: 100%;
-                object-fit: cover;
-            }
+        & h3 {
+            font-weight: bold;
+            font-size: clamp(2rem, 10vw, 4rem);
+            text-align: center;
+        }
 
-            & .awardPictures {
-                display: grid;
-                grid-template: 1fr / 1fr 1fr;
-                gap: 5px;
-                width: 100%;
-            }
+        & img {
+            width: 100%;
+            object-fit: cover;
+        }
 
-            & p {
-                font-size: clamp(2rem, 10vw, 3rem);
-            }
+        & .awardPictures {
+            display: grid;
+            grid-template: 1fr / 1fr 1fr;
+            gap: 5px;
+            width: 100%;
+        }
+
+        & p {
+            font-size: clamp(2rem, 10vw, 3rem);
         }
     }
+
 }
 
 .aboutMe #certification .content {
@@ -625,6 +690,9 @@ header nav a {
     padding: 40px;
     border-radius: var(--border-radius);
     background-color: var(--second-black);
+
+    animation: introduceSection linear;
+    animation-timeline: view();
 
     & img {
         aspect-ratio: 1/1;
@@ -648,6 +716,9 @@ header nav a {
     gap: 5%;
     padding-left: 0;
     margin-left: 0;
+
+    animation: introduceSection linear;
+    animation-timeline: view();
 
     & li {
         display: flex;
@@ -795,6 +866,9 @@ header nav a {
     column-gap: 30px;
     width: 80%;
 
+    animation: introduceSection linear;
+    animation-timeline: view();
+
     & input {
         background: 0;
         border: 0;
@@ -868,6 +942,9 @@ header nav a {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    animation: introduceSection linear;
+    animation-timeline: view();
 }
 
 .contact footer h2 {
@@ -986,6 +1063,9 @@ header nav a {
     scrollbar-color: var(--second-black);
     align-self: center;
 
+    animation: introduceSection linear;
+    animation-timeline: view();
+
     width: 70%;
 
 
@@ -1083,6 +1163,8 @@ header nav a {
         border-radius: var(--border-radius);
         padding: 20px;
 
+        animation: introduceSection linear;
+        animation-timeline: view();
         transition: background-color 0.3s ease-in-out;
 
         & h3 {
@@ -1131,6 +1213,9 @@ header nav a {
         align-items: flex-start;
         justify-content: space-between;
         gap: clamp(20px, 5vw, 50px);
+
+        animation: introduceSection linear;
+        animation-timeline: view();
 
         transition: background-color 0.3s ease-in-out;
         padding: 20px 0px;
@@ -1182,6 +1267,8 @@ header nav a {
         padding: 20px;
 
         transition: background-color 0.3s ease-in-out;
+        animation: introduceSection linear;
+        animation-timeline: view();
 
         & h3 {
             margin-top: 0;
@@ -1224,6 +1311,8 @@ header nav a {
         flex: 1 1 300px;
         width: 100%;
 
+        animation: introduceSection linear;
+        animation-timeline: view();
         transition: background-color 0.3s ease-in-out;
 
         & h3 {
@@ -1324,6 +1413,9 @@ header nav a {
     align-items: flex-start;
     gap: clamp(10px, 5%, 50px);
 
+    animation: introduceSection linear;
+    animation-timeline: view();
+
     & img {
         max-width: 50%;
         object-fit: contain;
@@ -1352,8 +1444,10 @@ header nav a {
     order: 1;
 }
 
-.writingStudy img {
+.writingStudy>main>img {
     width: 60%;
+    animation: introduceSection linear;
+    animation-timeline: view();
 }
 
 .writingStudy #habitsOfMind ul {
@@ -1378,6 +1472,7 @@ header nav a {
 /* Necessary Media Queries (when the wrap refuses to abide... hopefully because I only want it to wrap when the content shrinks to a very certain point) */
 
 @media screen and (max-width: 760px) {
+
     /* Nav Bar */
     /* Just centering to make it look even */
     nav {
@@ -1428,30 +1523,30 @@ header nav a {
     .homePage #writingCaseStudiesList {
         position: relative;
         margin-bottom: 1000px;
-    
+
         &>section {
             position: absolute;
             background-color: var(--second-black);
         }
     }
-    
+
     .homePage #writingCaseStudiesList {
         margin-bottom: 1000px;
     }
-    
+
     .homePage .lineRedirect {
         position: absolute;
-    
+
         padding: 2px;
         width: 0px;
         border-radius: 50%;
         background-color: var(--primary-red);
     }
-    
+
     .homePage #bioShieldCard {
         top: 300px;
         left: 0;
-    
+
         & .caseStudyContent {
             position: absolute;
             height: fit-content;
@@ -1459,74 +1554,74 @@ header nav a {
             left: 50px;
         }
     }
-    
+
     .homePage #lineRedirect1 {
         position: absolute;
         top: 450px;
         left: 18px;
         /* Circle radius - this element's padding */
-    
+
         padding: 2px;
         border-radius: 50%;
         background-color: var(--primary-red);
     }
-    
+
     .homePage #pawPalCard {
         top: 700px;
         left: 0;
-    
+
         & .caseStudyContent {
             position: absolute;
             top: -10px;
             left: 50px;
         }
     }
-    
+
     .homePage #EECUBudgetCalculatorCard {
         top: 1100px;
         left: 0;
-    
+
         & .caseStudyContent {
             position: absolute;
             top: -10px;
             left: 50px;
         }
     }
-    
+
     .homePage #lineRedirect2 {
         top: 0px;
         left: 18px;
         /* Circle diameter + this element's padding */
     }
-    
+
     .homePage #researchPaperCard {
         top: 400px;
         left: 0px;
         /* Diameter of Circle; do this since posiitons based off top-right of svg */
-    
+
         & .caseStudyContent {
             position: absolute;
             top: -10px;
             left: 50px;
         }
     }
-    
+
     .homePage #lineRedirect3 {
         top: 500px;
         left: 18px;
         /* Circle radius + this element's padding ??? why is it like this here*/
     }
-    
+
     .homePage #lineRedirect4 {
         top: 700px;
         left: 18px;
         /* Circle diameter + this element's padding */
     }
-    
+
     .homePage #CARTShowcaseReflectionCard {
         top: 800px;
         left: 0;
-    
+
         & .caseStudyContent {
             position: absolute;
             top: -10px;
