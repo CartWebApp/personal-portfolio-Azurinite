@@ -105,16 +105,6 @@ window.addEventListener('load', () => {
        // const caseStudyContent = card.querySelector(".caseStudyContent");
         const viewStudyButton = card.querySelector("button");
         const overlay = document.querySelector(`#${id.replace("Card", "")}`);
-
-     /*   card.addEventListener("mouseenter", () => {
-            caseStudyContent.classList.remove("hidden");
-            repositionLines();
-        });
-        card.addEventListener("mouseleave", () => {
-            caseStudyContent.classList.add("hidden");
-            repositionLines();
-        }); */
-
         viewStudyButton.addEventListener("click", () => {
             overlay.showModal();
         });

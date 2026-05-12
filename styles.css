@@ -1,12 +1,16 @@
 @import url('https://googleapis.com');
 
+@keyframes pageFadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 @keyframes fadeIntro {
     0%,
     70% {
         opacity: 1;
     }
 
-    90%,
     100% {
         opacity: 0;
     }
@@ -77,6 +81,7 @@ body {
 main,
 footer {
     margin: 25px;
+    animation: pageFadeIn 0.5s ease-in-out forwards;
 }
 
 h1,
@@ -151,7 +156,7 @@ header nav {
 }
 
 header nav a {
-    color: var(--primary-white);
+    color: #FFFFFF;
     text-decoration: none;
     font-size: clamp(0.75rem, 4vw, 1.5rem);
 
