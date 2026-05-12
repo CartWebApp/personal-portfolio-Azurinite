@@ -1,5 +1,4 @@
 @import url('https://googleapis.com');
-/* Import fonts */
 
 @keyframes fadeIntro {
     0%,
@@ -47,6 +46,11 @@
     }
 }
 
+/* Page transitions */
+body.fadeOut {
+    opacity: 0;
+}
+
 :root {
     --primary-red: #EB4747;
     --primary-white: #EAEAEA;
@@ -61,10 +65,13 @@ html {
 }
 
 body {
+    opacity: 1;
     background-color: var(--bg-black);
     color: white;
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
+
+    transition: opacity 0.5s ease-in-out;
 }
 
 main,
