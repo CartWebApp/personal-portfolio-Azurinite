@@ -6,6 +6,7 @@
     --primary-white: #EAEAEA;
     --bg-black: #161616;
     --second-black: #272727;
+    --hover-black: #3a3a3a;
     --border-radius: 15px;
 }
 
@@ -20,7 +21,7 @@ body {
     margin: 0;
 }
 
-main {
+main, footer {
     margin: 25px;
 }
 
@@ -38,6 +39,17 @@ p {
 a {
     color: white;
     text-decoration: none;
+
+    transition: text-decoration 0.3s ease-in-out;
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--primary-red);
+    }
+}
+
+button {
+    cursor: pointer;
 }
 
 /* Scrollbar stuff */
@@ -76,20 +88,22 @@ header {
     border-bottom: 3px solid var(--primary-red);
 }
 
-nav {
+header nav {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    gap: 50px
+    gap: clamp(20px, 5vw, 50px);
+    z-index: 1000;
 }
 
-nav a {
+header nav a {
     color: var(--primary-white);
     text-decoration: none;
-    font-size: clamp(1rem, 5vw, 1.5rem);
+    font-size: clamp(0.75rem, 4vw, 1.5rem);
 
     &:hover {
         text-decoration: underline;
+        text-decoration-color: var(--primary-red);
     }
 }
 
@@ -110,7 +124,7 @@ nav a {
 
 .homePage #greeting #BigRedName {
     color: var(--primary-red);
-    font-size: clamp(10rem, 8vw, 16rem);
+    font-size: clamp(6rem, 18vw, 16rem);
 }
 
 .homePage h2 {
@@ -121,7 +135,7 @@ nav a {
 .homePage #programmingCaseStudiesList,
 .homePage #writingCaseStudiesList {
     position: relative;
-    margin-bottom: 800px;
+    margin-bottom: clamp(1200px,5vw,800px);
 
     &>section {
         position: absolute;
@@ -184,8 +198,8 @@ nav a {
 }
 
 .homePage #lineRedirect2 {
-    top: 2350px;
-    right: 40px;
+    top: 0px;
+    right: 18px;
     /* Circle diameter + this element's padding */
 }
 
@@ -203,7 +217,7 @@ nav a {
 
 .homePage #lineRedirect3 {
     top: 600px;
-    right: 20px;
+    right: 18px;
     /* Circle radius + this element's padding ??? why is it like this here*/
 }
 
@@ -241,27 +255,18 @@ nav a {
 
 /* Card Fade in */
 @keyframes cardFadeIn {
-    0% {
-        opacity: 0;
-    }
 
+    0%,
     25% {
         opacity: 0;
     }
 
-    45% {
-        opacity: 1;
-    }
-
+    45%,
     55% {
         opacity: 1;
     }
 
-
-    75% {
-        opacity: 0;
-    }
-
+    75%,
     100% {
         opacity: 0;
     }
@@ -275,7 +280,7 @@ nav a {
     animation: cardFadeIn linear;
     animation-timeline: view();
 
-    z-index: 999;
+    z-index: 10;
 
     width: fit-content;
 
@@ -292,7 +297,6 @@ nav a {
 
         border-radius: var(--border-radius);
         padding: 20px;
-        background-color: var(--second-black);
     }
 
     &>p {
@@ -301,7 +305,7 @@ nav a {
     }
 
     &>h3 {
-        font-size: clamp(1.75rem, 5vw, 2.75rem);
+        font-size: clamp(2rem, 5vw, 2.75rem);
         text-align: center;
     }
 
@@ -313,9 +317,10 @@ nav a {
         border-radius: var(--border-radius);
         border: 3px solid var(--primary-red);
         color: var(--primary-white);
+        transition: background-color 0.3s ease-in-out allow-discrete;
 
         &:hover {
-            background-color: #494949;
+            background-color: var(--hover-black);
         }
 
     }
@@ -398,9 +403,10 @@ nav a {
                 border-radius: var(--border-radius);
                 border: 3px solid var(--primary-red);
                 color: var(--primary-white);
+                transition: background-color 0.3s ease-in-out allow-discrete;
 
                 &:hover {
-                    background-color: #494949;
+                    background-color: var(--hover-black);
                 }
             }
         }
@@ -458,8 +464,10 @@ nav a {
     border-radius: var(--border-radius);
     border: 3px solid var(--primary-red);
 
+    transition: background-color 0.3s ease-in-out;
+
     &:hover {
-        background-color: #494949;
+        background-color: var(--hover-black);
     }
 }
 
@@ -518,6 +526,11 @@ nav a {
         display: flex;
         align-items: center;
         gap: 15px;
+        border-radius: var(--border-radius);
+        background-color: #16161600;
+        padding: 5px;
+
+        transition: background-color 0.3s ease-in-out allow-discrete;
 
         & p {
             font-size: clamp(1.5rem, 3vw, 2rem);
@@ -527,6 +540,15 @@ nav a {
         & img {
             border-radius: var(--border-radius);
             background-color: var(--second-black);
+            transition: background-color 0.3s ease-in-out allow-discrete;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--hover-black);
+            & img {
+                background-color: var(--hover-black);
+            }
         }
     }
 }
@@ -738,6 +760,10 @@ nav a {
     margin: 0;
 }
 
+.resume footer a {
+    text-decoration: underline;
+}
+
 
 
 /* Contact */
@@ -777,7 +803,13 @@ nav a {
         font-size: clamp(1.25rem, 5vw, 1.75rem);
         text-indent: 15px;
         padding: 10px 0px;
-        color: var(--primary-white)
+        color: var(--primary-white);
+
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover {
+            background-color: var(--hover-black);
+        }
     }
 
     & label {
@@ -788,6 +820,7 @@ nav a {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        border-radius: var(--border-radius);
     }
 
     & #messageField {
@@ -800,6 +833,12 @@ nav a {
             background-color: var(--second-black);
             border-radius: var(--border-radius);
             border: 2px solid var(--primary-red);
+
+            transition: background-color 0.3s ease-in-out;
+
+            &:hover {
+                background-color: var(--hover-black);
+            }
         }
     }
 
@@ -812,13 +851,14 @@ nav a {
         height: auto;
         font-size: clamp(2rem, 5vw, 3rem);
 
+        transition: background-color 0.3s ease-in-out;
 
         background-color: var(--second-black);
         border: 3px solid var(--primary-red);
         border-radius: var(--border-radius);
 
         &:hover {
-            background-color: #494949;
+            background-color: var(--hover-black);
         }
     }
 }
@@ -849,7 +889,7 @@ nav a {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 30px;
         width: auto;
         margin: 0;
 
@@ -858,7 +898,7 @@ nav a {
         }
 
         & a {
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: clamp(1rem, 5vw, 2rem);
             word-break: break-all;
         }
     }
@@ -944,8 +984,10 @@ nav a {
     background-color: var(--second-black);
     border-radius: var(--border-radius);
     scrollbar-color: var(--second-black);
+    align-self: center;
 
-    scroll-marker-group: after;
+    width: 70%;
+
 
     /* This declares an anchor for other elements, just like setting a variable */
     anchor-name: --image-carousel;
@@ -954,7 +996,7 @@ nav a {
     & img {
         scroll-snap-align: center;
         flex: 0 0 100%;
-        width: 1000px;
+        width: 100%;
         object-fit: cover;
         border-radius: var(--border-radius);
 
@@ -967,21 +1009,8 @@ nav a {
             border-radius: 50%;
             overflow: hidden;
             text-indent: 16px;
-          }
+        }
     }
-
-    /* Carousel circles */
-    &::scroll-marker-group {
-        position: absolute;
-        position-anchor: --my-carousel;
-        top: calc(anchor(bottom) - 70px);
-        justify-self: anchor-center;
-      
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-      }
-
 
     /* Arrow buttons */
     &::scroll-button(*) {
@@ -989,16 +1018,27 @@ nav a {
         position-anchor: --image-carousel;
 
         border: 0;
-        font-size: 2rem;
+        font-size: clamp(1rem, 5vw, 3rem);
         background: none;
         color: var(--primary-white);
         opacity: 0.7;
         cursor: pointer;
+
+        margin: 0;
+
+        border: 2px solid var(--primary-red);
+        border-radius: var(--border-radius);
+        background-color: var(--second-black);
+        padding: clamp(5px, 5vw, 15px);
+
+        transition: opacity 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
     }
 
     &::scroll-button(*):hover,
     &::scroll-button(*):focus {
         opacity: 1;
+        background-color: var(--hover-black);
     }
 
     &::scroll-button(*):active {
@@ -1006,20 +1046,20 @@ nav a {
     }
 
     &::scroll-button(*):disabled {
-        opacity: 0.2;
+        opacity: 0.15;
         cursor: unset;
     }
 
     &::scroll-button(left) {
         content: "◄" / "Previous";
         right: calc(anchor(left) - 70px);
-        bottom: calc(anchor(top) + 13px);
+        bottom: calc(anchor(bottom) - 120px);
     }
 
     &::scroll-button(right) {
         content: "►" / "Next";
         left: calc(anchor(right) - 70px);
-        bottom: calc(anchor(top) + 13px);
+        bottom: calc(anchor(bottom) - 120px);
     }
 }
 
@@ -1042,6 +1082,8 @@ nav a {
         background-color: var(--second-black);
         border-radius: var(--border-radius);
         padding: 20px;
+
+        transition: background-color 0.3s ease-in-out;
 
         & h3 {
             font-size: clamp(3rem, 4vw, 6rem);
@@ -1070,6 +1112,10 @@ nav a {
                 }
             }
         }
+
+        &:hover {
+            background-color: var(--hover-black);
+        }
     }
 }
 
@@ -1085,6 +1131,9 @@ nav a {
         align-items: flex-start;
         justify-content: space-between;
         gap: clamp(20px, 5vw, 50px);
+
+        transition: background-color 0.3s ease-in-out;
+        padding: 20px 0px;
 
         & img {
             aspect-ratio: 1/1;
@@ -1111,6 +1160,10 @@ nav a {
                 margin: 0;
             }
         }
+
+        &:hover {
+            background-color: var(--hover-black);
+        }
     }
 }
 
@@ -1128,6 +1181,8 @@ nav a {
         background-color: var(--second-black);
         padding: 20px;
 
+        transition: background-color 0.3s ease-in-out;
+
         & h3 {
             margin-top: 0;
             font-weight: 600;
@@ -1142,6 +1197,10 @@ nav a {
             flex-direction: column;
             justify-content: space-around;
             gap: 10px;
+        }
+
+        &:hover {
+            background-color: var(--hover-black);
         }
     }
 }
@@ -1165,6 +1224,8 @@ nav a {
         flex: 1 1 300px;
         width: 100%;
 
+        transition: background-color 0.3s ease-in-out;
+
         & h3 {
             font-size: clamp(2rem, 5vw, 4.5rem);
             font-weight: bold;
@@ -1173,6 +1234,10 @@ nav a {
 
         & p {
             font-size: clamp(1rem, 5vw, 2.25rem);
+        }
+
+        &:hover {
+            background-color: var(--hover-black);
         }
     }
 }
@@ -1313,8 +1378,13 @@ nav a {
 /* Necessary Media Queries (when the wrap refuses to abide... hopefully because I only want it to wrap when the content shrinks to a very certain point) */
 
 @media screen and (max-width: 760px) {
-    /* About Me */
+    /* Nav Bar */
+    /* Just centering to make it look even */
+    nav {
+        justify-content: space-around;
+    }
 
+    /* About Me */
     .aboutMe #certification .content {
         align-items: center;
         flex-direction: column;
@@ -1348,5 +1418,125 @@ nav a {
         &>ul {
             width: 100%;
         }
+    }
+
+
+
+    /* All of this down here is realigning home page line to just be a single timeline at the side */
+
+    .homePage #programmingCaseStudiesList,
+    .homePage #writingCaseStudiesList {
+        position: relative;
+        margin-bottom: 1000px;
+    
+        &>section {
+            position: absolute;
+            background-color: var(--second-black);
+        }
+    }
+    
+    .homePage #writingCaseStudiesList {
+        margin-bottom: 1000px;
+    }
+    
+    .homePage .lineRedirect {
+        position: absolute;
+    
+        padding: 2px;
+        width: 0px;
+        border-radius: 50%;
+        background-color: var(--primary-red);
+    }
+    
+    .homePage #bioShieldCard {
+        top: 300px;
+        left: 0;
+    
+        & .caseStudyContent {
+            position: absolute;
+            height: fit-content;
+            top: -10px;
+            left: 50px;
+        }
+    }
+    
+    .homePage #lineRedirect1 {
+        position: absolute;
+        top: 450px;
+        left: 18px;
+        /* Circle radius - this element's padding */
+    
+        padding: 2px;
+        border-radius: 50%;
+        background-color: var(--primary-red);
+    }
+    
+    .homePage #pawPalCard {
+        top: 700px;
+        left: 0;
+    
+        & .caseStudyContent {
+            position: absolute;
+            top: -10px;
+            left: 50px;
+        }
+    }
+    
+    .homePage #EECUBudgetCalculatorCard {
+        top: 1100px;
+        left: 0;
+    
+        & .caseStudyContent {
+            position: absolute;
+            top: -10px;
+            left: 50px;
+        }
+    }
+    
+    .homePage #lineRedirect2 {
+        top: 0px;
+        left: 18px;
+        /* Circle diameter + this element's padding */
+    }
+    
+    .homePage #researchPaperCard {
+        top: 400px;
+        left: 0px;
+        /* Diameter of Circle; do this since posiitons based off top-right of svg */
+    
+        & .caseStudyContent {
+            position: absolute;
+            top: -10px;
+            left: 50px;
+        }
+    }
+    
+    .homePage #lineRedirect3 {
+        top: 500px;
+        left: 18px;
+        /* Circle radius + this element's padding ??? why is it like this here*/
+    }
+    
+    .homePage #lineRedirect4 {
+        top: 700px;
+        left: 18px;
+        /* Circle diameter + this element's padding */
+    }
+    
+    .homePage #CARTShowcaseReflectionCard {
+        top: 800px;
+        left: 0;
+    
+        & .caseStudyContent {
+            position: absolute;
+            top: -10px;
+            left: 50px;
+        }
+    }
+
+    .homePage .caseStudyContent {
+        width: fit-content;
+        min-width: 250px;
+        height: fit-content;
     }
 }

@@ -10,25 +10,34 @@ const CARTShowcaseReflectionCard = document.querySelector('#CARTShowcaseReflecti
 
 // Draw lines between circles
 function alignMiddleDot() {
-    const dot1 = lineRedirect1.getBoundingClientRect();
-    const dot2 = lineRedirect2.getBoundingClientRect();
-
-    const pawPalPercent = 0.33;
-    const BudgetCalcPercent = 0.66;
-
-    const alignCard = (card, percent) => {
-        const x = dot1.x + percent * (dot2.x - dot1.x);
-        const y = dot1.y + percent * (dot2.y - dot1.y);
-
-        // Gotta account for offset from top of page to programmingCaseStudies section, since the abs. positioning is still scaling to it being inside of the section
-        const sectionY = document.querySelector("#programmingCaseStudiesList").getBoundingClientRect().top;
-
-        card.style.left = `${x - 25}px`; // Not sure why such a specific offset is needed.. but this works! I was just randomly plugging values in
-        card.style.top = `${y - sectionY}px`;
-    };
-
-    alignCard(pawPalCard, pawPalPercent);
-    alignCard(EECUBudgetCalculatorCard, BudgetCalcPercent);
+    // Only do this is window size is not mobile
+    if (window.innerWidth > 760) {
+        const dot1 = lineRedirect1.getBoundingClientRect();
+        const dot2 = lineRedirect2.getBoundingClientRect();
+    
+        const pawPalPercent = 0.33;
+        const BudgetCalcPercent = 0.66;
+    
+        const alignCard = (card, percent) => {
+            const x = dot1.x + percent * (dot2.x - dot1.x);
+            const y = dot1.y + percent * (dot2.y - dot1.y);
+    
+            // Gotta account for offset from top of page to programmingCaseStudies section, since the abs. positioning is still scaling to it being inside of the section
+            const sectionY = document.querySelector("#programmingCaseStudiesList").getBoundingClientRect().top;
+    
+            card.style.left = `${x - 25}px`; // Not sure why such a specific offset is needed.. but this works! I was just randomly plugging values in
+            card.style.top = `${y - sectionY}px`;
+        };
+    
+        alignCard(pawPalCard, pawPalPercent);
+        alignCard(EECUBudgetCalculatorCard, BudgetCalcPercent);
+    } else {
+        // Revert style changes caused by this]
+        pawPalCard.style.top = '';
+        pawPalCard.style.left = '';
+        EECUBudgetCalculatorCard.style.top = '';
+        EECUBudgetCalculatorCard.style.left = ''
+    }
 }
 
 // Don't need to redraw lines here since LeaderLine is automatically responsive
@@ -76,7 +85,6 @@ window.addEventListener('load', () => {
         LeaderLine.pointAnchor(lineRedirect4),
         LeaderLine.pointAnchor(CARTShowcaseReflectionCard.querySelector('circle'))
     );
-    line8.path = 'grid';
 
 
 
@@ -87,6 +95,8 @@ window.addEventListener('load', () => {
         line4.position();
         line5.position();
         line6.position();
+        line7.position();
+        line8.position();
     };
 
     const setUpCard = card => {
