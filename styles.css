@@ -3,7 +3,6 @@
 
 :root {
     --primary-red: #EB4747;
-    --hover-red: #e68585;
     --primary-white: #EAEAEA;
     --bg-black: #161616;
     --second-black: #272727;
@@ -57,12 +56,13 @@ a {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: var(--primary-red);
+    background-color: gray;
     border-radius: var(--border-radius);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--hover-red);
+    background: rgb(206, 206, 206);
 }
 
 
@@ -121,12 +121,24 @@ nav a {
 .homePage #programmingCaseStudiesList,
 .homePage #writingCaseStudiesList {
     position: relative;
-    margin-bottom: 700px;
+    margin-bottom: 800px;
 
     &>section {
         position: absolute;
         background-color: var(--second-black);
     }
+}
+
+.homePage #writingCaseStudiesList {
+    margin-bottom: 1000px;
+}
+
+.homePage .lineRedirect {
+    position: absolute;
+
+    padding: 2px;
+    border-radius: 50%;
+    background-color: var(--primary-red);
 }
 
 .homePage #bioShieldCard {
@@ -140,7 +152,7 @@ nav a {
     }
 }
 
-.homePage #lineRedirect {
+.homePage #lineRedirect1 {
     position: absolute;
     top: 800px;
     left: 18px;
@@ -171,11 +183,17 @@ nav a {
     }
 }
 
-.homePage #researchPaperCard {
-    top: 300px;
+.homePage #lineRedirect2 {
+    top: 2350px;
     right: 40px;
+    /* Circle diameter + this element's padding */
+}
 
+.homePage #researchPaperCard {
+    top: 200px;
+    right: 40px;
     /* Diameter of Circle; do this since posiitons based off top-right of svg */
+
     & .caseStudyContent {
         position: absolute;
         top: -10px;
@@ -183,13 +201,25 @@ nav a {
     }
 }
 
-.homePage #CARTShowcaseReflectionCard {
+.homePage #lineRedirect3 {
     top: 600px;
+    right: 20px;
+    /* Circle radius + this element's padding ??? why is it like this here*/
+}
+
+.homePage #lineRedirect4 {
+    top: 600px;
+    left: 18px;
+    /* Circle diameter + this element's padding */
+}
+
+.homePage #CARTShowcaseReflectionCard {
+    top: 1000px;
     left: 0;
 
     & .caseStudyContent {
         position: absolute;
-        top: -10px;
+        bottom: -40px;
         left: 75px;
     }
 }
@@ -904,24 +934,98 @@ nav a {
 }
 
 .programmingStudy #caseStudyImages {
-    overflow-y: auto;
-    overflow-x: hidden;
-    width: 500px;
-    height: 300px;
-    transform: rotate(90deg);
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    transform-origin: right top;
     gap: 10px;
     padding: 20px;
     background-color: var(--second-black);
     border-radius: var(--border-radius);
     scrollbar-color: var(--second-black);
 
+    scroll-marker-group: after;
+
+    /* This declares an anchor for other elements, just like setting a variable */
+    anchor-name: --image-carousel;
+
 
     & img {
-        width: 1200px;
+        scroll-snap-align: center;
+        flex: 0 0 100%;
+        width: 1000px;
         object-fit: cover;
         border-radius: var(--border-radius);
+
+        &::scroll-marker {
+            content: attr(data-accName);
+            width: 16px;
+            height: 16px;
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 50%;
+            overflow: hidden;
+            text-indent: 16px;
+          }
+    }
+
+    /* Carousel circles */
+    &::scroll-marker-group {
+        position: absolute;
+        position-anchor: --my-carousel;
+        top: calc(anchor(bottom) - 70px);
+        justify-self: anchor-center;
+      
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+
+    /* Arrow buttons */
+    &::scroll-button(*) {
+        position: absolute;
+        position-anchor: --image-carousel;
+
+        border: 0;
+        font-size: 2rem;
+        background: none;
+        color: var(--primary-white);
+        opacity: 0.7;
+        cursor: pointer;
+    }
+
+    &::scroll-button(*):hover,
+    &::scroll-button(*):focus {
+        opacity: 1;
+    }
+
+    &::scroll-button(*):active {
+        translate: 1px 1px;
+    }
+
+    &::scroll-button(*):disabled {
+        opacity: 0.2;
+        cursor: unset;
+    }
+
+    &::scroll-button(left) {
+        content: "◄" / "Previous";
+        right: calc(anchor(left) - 70px);
+        bottom: calc(anchor(top) + 13px);
+    }
+
+    &::scroll-button(right) {
+        content: "►" / "Next";
+        left: calc(anchor(right) - 70px);
+        bottom: calc(anchor(top) + 13px);
     }
 }
+
+
+
+
 
 .programmingStudy #techStack ul {
     display: grid;
