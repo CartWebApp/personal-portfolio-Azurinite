@@ -6,8 +6,7 @@
 }
 
 @keyframes fadeIntro {
-    0%,
-    70% {
+    0%, 70% {
         opacity: 1;
     }
 
@@ -16,36 +15,40 @@
     }
 }
 
-@keyframes introduceSection {
-    0%,
-    10% {
+@keyframes fadeInLastElement {
+    0% {
         opacity: 0;
     }
 
-    37.5%,
-    70% {
+    15%, 100% {
+        opacity: 1;
+    }
+}
+
+@keyframes introduceSection {
+    0%, 10% {
+        opacity: 0;
+    }
+
+    37.5%, 70% {
         opacity: 1;
     }
 
-    90%,
-    100% {
+    90%, 100% {
         opacity: 0;
     }
 }
 
 @keyframes cardFadeIn {
-    0%,
-    25% {
+    0%, 25% {
         opacity: 0;
     }
 
-    45%,
-    55% {
+    45%, 55% {
         opacity: 1;
     }
 
-    75%,
-    100% {
+    75%, 100% {
         opacity: 0;
     }
 }
@@ -197,8 +200,6 @@ header nav a {
 .homePage h2 {
     text-align: center;
     font-size: clamp(4rem, 5vw, 6rem);
-    animation: introduceSection linear;
-    animation-timeline: view();
 }
 
 .homePage #programmingCaseStudiesList,
